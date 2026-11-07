@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "GPU_experiments_rerun_for_publication": false,
+  "cpu_suites": [
+    {
+      "name": "release",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "pidg",
+      "tests": 19,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "gs3d",
+      "tests": 33,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "total_cpu_tests": 59,
+  "patch_application": "matches recorded PIDG flow SHA and original3DGS backward SHA",
+  "publication_portability_changes": [
+    "GPU config moved out of machine-specific constants",
+    "optional owner-registered viewer config propagated to parent and worker",
+    "only decompiler path/time comments removed from restored PIDG source; AST unchanged"
+  ],
+  "historical_numeric_status_preserved": {
+    "PIDG_retained_module": "PASS within frozen module scope",
+    "PIDG_raster": "REJECTED 84 continuous violations",
+    "Original3DGS": "INCORRECT;11 continuous violations unresolved"
+  },
+  "fresh_environment_acceptance": "not inherited; regenerate reference records and freeze new evaluator"
+}

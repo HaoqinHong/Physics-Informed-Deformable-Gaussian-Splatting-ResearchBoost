@@ -1,0 +1,106 @@
+--- a/submodules/flow-based-diff-gaussian-rasterization/cuda_rasterizer/backward.cu
++++ b/submodules/flow-based-diff-gaussian-rasterization/cuda_rasterizer/backward.cu
+@@ -14,6 +14,21 @@
+ #include <cooperative_groups.h>
+ #include <cooperative_groups/reduce.h>
+ namespace cg = cooperative_groups;
++
++// All active pixels at a given inner-loop iteration process the same
++// collected_id[j]. Aggregate their per-Gaussian contributions within each
++// currently active warp group before the original global atomic update.
++// Partition by the actual address as well, so divergent loop progress cannot
++// combine updates for different Gaussians.
++__device__ __forceinline__ void warpAtomicAdd(float* address, float value)
++{
++    auto active = cg::coalesced_threads();
++    auto same_address = cg::labeled_partition(active, address);
++    const float sum = cg::reduce(same_address, value, cg::plus<float>());
++    if (same_address.thread_rank() == 0)
++        atomicAdd(address, sum);
++}
++
+ 
+ // Backward pass for conversion of spherical harmonics to RGB for
+ // each Gaussian.
+@@ -597,12 +612,12 @@
+ 				// Update the gradients w.r.t. color of the Gaussian. 
+ 				// Atomic, since this pixel is just one of potentially
+ 				// many that were affected by this Gaussian.
+-				atomicAdd(&(dL_dcolors[global_id * C + ch]), dchannel_dcolor * dL_dchannel);
++				warpAtomicAdd(&(dL_dcolors[global_id * C + ch]), dchannel_dcolor * dL_dchannel);
+ 			}
+ 			// for (int ch_var = 0; ch_var < 20; ch_var++)
+ 			// {
+-			// 	// atomicAdd(&(dummy_gs_per_pixel[global_id * 20 + ch_var]), 0.0);
+-			// 	atomicAdd(&(dummy_weight_per_gs_pixel[global_id * 20 + ch_var]), alpha * T);
++			// 	// warpAtomicAdd(&(dummy_gs_per_pixel[global_id * 20 + ch_var]), 0.0);
++			// 	warpAtomicAdd(&(dummy_weight_per_gs_pixel[global_id * 20 + ch_var]), alpha * T);
+ 			// }
+ 
+ 			// Propagate gradients from pixel depth to opacity
+@@ -610,7 +625,7 @@
+ 			accum_depth_rec = last_alpha * last_depth + (1.f - last_alpha) * accum_depth_rec;
+ 			last_depth = c_d;
+ 			dL_dopa += (c_d - accum_depth_rec) * dL_dpixel_depth;
+-			atomicAdd(&(dL_ddepths[global_id]), dpixel_depth_ddepth * dL_dpixel_depth);
++			warpAtomicAdd(&(dL_ddepths[global_id]), dpixel_depth_ddepth * dL_dpixel_depth);
+ 
+ 			// Propagate gradients from pixel alpha (weights_sum) to opacity
+ 			accum_alpha_rec = last_alpha + (1.f - last_alpha) * accum_alpha_rec;
+@@ -636,39 +651,39 @@
+ 			const float dG_ddely = -gdy * con_o.z - gdx * con_o.y;
+ 
+ 			// Update gradients w.r.t. 2D mean position of the Gaussian
+-			atomicAdd(&dL_dmean2D[global_id].x, dL_dG * dG_ddelx * ddelx_dx);
+-			atomicAdd(&dL_dmean2D[global_id].y, dL_dG * dG_ddely * ddely_dy);
++			warpAtomicAdd(&dL_dmean2D[global_id].x, dL_dG * dG_ddelx * ddelx_dx);
++			warpAtomicAdd(&dL_dmean2D[global_id].y, dL_dG * dG_ddely * ddely_dy);
+ 
+             // Update gradients w.r.t. 2D mean position of the Gaussian (proj_2D)
+-			// atomicAdd(&dL_proj_2D[global_id * 2 + 0], dL_dG * dG_ddelx * ddelx_dx);
+-			// atomicAdd(&dL_proj_2D[global_id * 2 + 1], dL_dG * dG_ddely * ddely_dy);
+-		    //atomicAdd(&dL_proj_2D[global_id].y, dL_dG * dG_ddely * ddely_dy);
++			// warpAtomicAdd(&dL_proj_2D[global_id * 2 + 0], dL_dG * dG_ddelx * ddelx_dx);
++			// warpAtomicAdd(&dL_proj_2D[global_id * 2 + 1], dL_dG * dG_ddely * ddely_dy);
++		    //warpAtomicAdd(&dL_proj_2D[global_id].y, dL_dG * dG_ddely * ddely_dy);
+  
+ 			// Update gradients w.r.t. 2D covariance (2x2 matrix, symmetric)
+ 
+-			atomicAdd(&dL_dconic2D[global_id].x, -0.5f * gdx * d.x * dL_dG);
+-			atomicAdd(&dL_dconic2D[global_id].y, -0.5f * gdx * d.y * dL_dG);
+-			atomicAdd(&dL_dconic2D[global_id].w, -0.5f * gdy * d.y * dL_dG);
++			warpAtomicAdd(&dL_dconic2D[global_id].x, -0.5f * gdx * d.x * dL_dG);
++			warpAtomicAdd(&dL_dconic2D[global_id].y, -0.5f * gdx * d.y * dL_dG);
++			warpAtomicAdd(&dL_dconic2D[global_id].w, -0.5f * gdy * d.y * dL_dG);
+ 
+             // Update gradients w.r.t. 2D covariance (output to python interface) (same as dL_dconic2D)
+-			// atomicAdd(&dL_conic_2D[global_id * 3 + 0], -0.5f * gdx * d.x * dL_dG);
+-			// atomicAdd(&dL_conic_2D[global_id * 3 + 1], -0.5f * gdx * d.y * dL_dG);
+-			// atomicAdd(&dL_conic_2D[global_id * 3 + 2], -0.5f * gdy * d.y * dL_dG);
++			// warpAtomicAdd(&dL_conic_2D[global_id * 3 + 0], -0.5f * gdx * d.x * dL_dG);
++			// warpAtomicAdd(&dL_conic_2D[global_id * 3 + 1], -0.5f * gdx * d.y * dL_dG);
++			// warpAtomicAdd(&dL_conic_2D[global_id * 3 + 2], -0.5f * gdy * d.y * dL_dG);
+ 
+ 			if (enable_flow_grad) {
+ 				// proj_2D 的梯度
+-				atomicAdd(&dL_proj_2D[global_id * 2 + 0], dL_dG * dG_ddelx * ddelx_dx);
+-				atomicAdd(&dL_proj_2D[global_id * 2 + 1], dL_dG * dG_ddely * ddely_dy);
++				warpAtomicAdd(&dL_proj_2D[global_id * 2 + 0], dL_dG * dG_ddelx * ddelx_dx);
++				warpAtomicAdd(&dL_proj_2D[global_id * 2 + 1], dL_dG * dG_ddely * ddely_dy);
+ 			
+ 				// conic_2D 的梯度（对称矩阵的三个分量）
+-				atomicAdd(&dL_conic_2D[global_id * 3 + 0], -0.5f * gdx * d.x * dL_dG);
+-				atomicAdd(&dL_conic_2D[global_id * 3 + 1], -0.5f * gdx * d.y * dL_dG);
+-				atomicAdd(&dL_conic_2D[global_id * 3 + 2], -0.5f * gdy * d.y * dL_dG);
++				warpAtomicAdd(&dL_conic_2D[global_id * 3 + 0], -0.5f * gdx * d.x * dL_dG);
++				warpAtomicAdd(&dL_conic_2D[global_id * 3 + 1], -0.5f * gdx * d.y * dL_dG);
++				warpAtomicAdd(&dL_conic_2D[global_id * 3 + 2], -0.5f * gdy * d.y * dL_dG);
+ 			}
+ 			
+ 
+ 			// Update gradients w.r.t. opacity of the Gaussian
+-			atomicAdd(&(dL_dopacity[global_id]), G * dL_dopa);
++			warpAtomicAdd(&(dL_dopacity[global_id]), G * dL_dopa);
+ 		}
+ 	}
+ }

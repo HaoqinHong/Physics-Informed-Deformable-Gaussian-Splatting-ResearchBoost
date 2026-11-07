@@ -1,0 +1,17 @@
+{
+  "schema": "original3dgs-native-performance-policy@1",
+  "declared_before_any_optimization": true,
+  "primary_phase_timing": "Only frozen bench.py B-C-B results. Fixed-N phase probes do not imply full native training speedup.",
+  "native_workload_seconds": {
+    "formula": "native_complete.postcheck_cpu_process.process.started_unix - full_train.process.started_unix",
+    "includes": "Fresh native Python child initialization, complete original 30000-step training, every native evaluation/checkpoint/PLY/GUI event, and wrapper setup before the postcheck subprocess.",
+    "excludes": "Out-of-band CPU artifact validation after native training. Its duration is retained separately.",
+    "data_source": "Existing timestamps written by frozen full_train.py and native_entry.py bounded_run; no replacement timing script.",
+    "eligibility": "Both paired full_train.json status complete and returncode zero; both native_complete.json contain successful fresh CPU postcheck with empty CUDA_VISIBLE_DEVICES; exact frozen source/data/config/seed/schedule bindings; source-specific GPU isolation limitation remains.",
+    "missing_boundary": "UNAVAILABLE. Do not substitute log timestamps, progress-bar elapsed values, recovered receipts or inferred durations.",
+    "known_baseline_eligibility_before_optimization": "Seed0 baseline bonsai used the legacy postcheck, and seed0 bicycle/garden retain failed original exits with strict separate postcheck recovery. These three are ineligible for paired native performance; seed1 runs use the fixed fresh-CPU wrapper for all scenes."
+  },
+  "wrapper_child_seconds": "full_train.process.ended_unix - full_train.process.started_unix; includes artifact validation and is diagnostic only, not reported as native training acceleration.",
+  "quality": "Evaluate both matched seeds 0/1 at native 7k and 30k, all held-out cameras, frozen baseline PSNR/SSIM/L1. Strictly recovered seed0 models remain eligible for quality only with their explicit immutable proof.",
+  "statistical_claims": "Two quality seeds are descriptive. Shared GPU timings are exploratory. No formal ResearchBoost PASS or statistical full-training equivalence claim."
+}

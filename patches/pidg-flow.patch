@@ -1,0 +1,74 @@
+--- a/utils/flow_utils.py
++++ b/utils/flow_utils.py
+@@ -139,6 +139,38 @@
+     return field_t.permute(1,2,0)                              # (H,W,2)
+ 
+ 
++class _ZeroElidingGather(torch.autograd.Function):
++    """Upstream row gather with ordered dense accumulation of nonzero terms."""
++
++    @staticmethod
++    def forward(ctx, table, indices):
++        ctx.save_for_backward(indices)
++        ctx.table_shape = table.shape
++        return table[indices]
++
++    @staticmethod
++    def backward(ctx, grad_output):
++        (indices,) = ctx.saved_tensors
++        rows = indices.reshape(-1)
++        values = grad_output.reshape(rows.numel(), *ctx.table_shape[1:])
++        result = grad_output.new_zeros(ctx.table_shape)
++        # With create_graph, keep every addend so that higher derivatives at
++        # zero incoming gradients retain the upstream linear map as well.
++        if not torch.is_grad_enabled() and values.numel():
++            active = values.reshape(rows.numel(), -1).ne(0).any(dim=1).nonzero().flatten()
++            rows = rows.index_select(0, active)
++            values = values.index_select(0, active)
++        # nonzero() preserves row order. Only exact zero vectors were omitted;
++        # nonfinite values and every nonzero addend remain in the dense sum.
++        rows = torch.where(rows < 0, rows + ctx.table_shape[0], rows)
++        result.index_put_((rows,), values, accumulate=True)
++        return result, None
++
++
++def _flow_gather(table, indices):
++    return _ZeroElidingGather.apply(table, indices)
++
++
+ def motion_flow_velocity(iteration, gaussians, viewpoint_cam, render_pkg_re, render_pkg_re_2, render_pkg_re_velocity, save_image_dir, dataset_type):
+     flow_loss = torch.tensor(0.0)
+     
+@@ -213,13 +245,13 @@
+         conv_conv[:, 0, 1] = next_conic_2D[:, 0] * conic_2D_inv[:, 1] + next_conic_2D[:, 1] * conic_2D_inv[:, 2]
+         conv_conv[:, 1, 0] = next_conic_2D[:, 1] * conic_2D_inv[:, 0] + next_conic_2D[:, 2] * conic_2D_inv[:, 1]
+         conv_conv[:, 1, 1] = next_conic_2D[:, 1] * conic_2D_inv[:, 1] + next_conic_2D[:, 2] * conic_2D_inv[:, 2]
+-        conv_multi = (B_t_2_B_inv_t_1[gs_per_pixel].permute(2, 0, 1, 3, 4) @ x_mu.permute(0,2,3,1).unsqueeze(-1).detach()).squeeze() # K H W 2
++        conv_multi = (_flow_gather(B_t_2_B_inv_t_1, gs_per_pixel).permute(2, 0, 1, 3, 4) @ x_mu.permute(0,2,3,1).unsqueeze(-1).detach()).squeeze() # K H W 2
+ 
+         # Gaussian Flow
+-        motion_flow_per_pixel = (conv_multi + next_proj_2D[gs_per_pixel].permute(2,0,1,3) - proj_2D[gs_per_pixel].permute(2,0,1,3).detach() - x_mu.permute(0,2,3,1).detach()) # [K,H,W,2]
++        motion_flow_per_pixel = (conv_multi + _flow_gather(next_proj_2D, gs_per_pixel).permute(2,0,1,3) - _flow_gather(proj_2D, gs_per_pixel).permute(2,0,1,3).detach() - x_mu.permute(0,2,3,1).detach()) # [K,H,W,2]
+         # Velocity Flow
+         next_proj_2D_velocity = render_pkg_re_velocity["proj_means_2D"]
+-        velocity_flow_per_pixel = (conv_multi + next_proj_2D_velocity[gs_per_pixel].permute(2,0,1,3) - proj_2D[gs_per_pixel].permute(2,0,1,3).detach() - x_mu.permute(0,2,3,1).detach()) # [K,H,W,2]
++        velocity_flow_per_pixel = (conv_multi + _flow_gather(next_proj_2D_velocity, gs_per_pixel).permute(2,0,1,3) - _flow_gather(proj_2D, gs_per_pixel).permute(2,0,1,3).detach() - x_mu.permute(0,2,3,1).detach()) # [K,H,W,2]
+ 
+         weight_per_gs_pixel = weight_per_gs_pixel / (weight_per_gs_pixel.sum(dim=0, keepdim=True) + 1e-7) # [K,H,W]
+         
+@@ -336,11 +368,11 @@
+     conv_conv[:, 0, 1] = next_conic_2D[:, 0] * conic_2D_inv[:, 1] + next_conic_2D[:, 1] * conic_2D_inv[:, 2]
+     conv_conv[:, 1, 0] = next_conic_2D[:, 1] * conic_2D_inv[:, 0] + next_conic_2D[:, 2] * conic_2D_inv[:, 1]
+     conv_conv[:, 1, 1] = next_conic_2D[:, 1] * conic_2D_inv[:, 1] + next_conic_2D[:, 2] * conic_2D_inv[:, 2]
+-    conv_multi = (B_t_2_B_inv_t_1[gs_per_pixel].permute(2, 0, 1, 3, 4) @ x_mu.permute(0,2,3,1).unsqueeze(-1).detach()).squeeze()
+-
+-    motion_flow_per_pixel = (conv_multi + next_proj_2D[gs_per_pixel].permute(2,0,1,3) - proj_2D[gs_per_pixel].permute(2,0,1,3).detach() - x_mu.permute(0,2,3,1).detach())
++    conv_multi = (_flow_gather(B_t_2_B_inv_t_1, gs_per_pixel).permute(2, 0, 1, 3, 4) @ x_mu.permute(0,2,3,1).unsqueeze(-1).detach()).squeeze()
++
++    motion_flow_per_pixel = (conv_multi + _flow_gather(next_proj_2D, gs_per_pixel).permute(2,0,1,3) - _flow_gather(proj_2D, gs_per_pixel).permute(2,0,1,3).detach() - x_mu.permute(0,2,3,1).detach())
+     next_proj_2D_velocity = render_pkg_re_velocity["proj_means_2D"]
+-    velocity_flow_per_pixel = (conv_multi + next_proj_2D_velocity[gs_per_pixel].permute(2,0,1,3) - proj_2D[gs_per_pixel].permute(2,0,1,3).detach() - x_mu.permute(0,2,3,1).detach())
++    velocity_flow_per_pixel = (conv_multi + _flow_gather(next_proj_2D_velocity, gs_per_pixel).permute(2,0,1,3) - _flow_gather(proj_2D, gs_per_pixel).permute(2,0,1,3).detach() - x_mu.permute(0,2,3,1).detach())
+ 
+     weight_per_gs_pixel = weight_per_gs_pixel / (weight_per_gs_pixel.sum(dim=0, keepdim=True) + 1e-7) # [K,H,W]
+     

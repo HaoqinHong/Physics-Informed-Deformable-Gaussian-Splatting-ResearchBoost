@@ -1,0 +1,11 @@
+{
+  "ResearchBoost-Agent": {
+    "commit": "ab7b569789317bf872c041a1d596454d58dcfdeb",
+    "copied_component": "numerics/*.py",
+    "modification": "none; byte-for-byte copy",
+    "read_instructions": ["AGENTS.md", "docs/judge.md", "docs/run-a-task.md", "skills/train-opt-measurement/SKILL.md", "skills/train-opt-numerics-validation/SKILL.md"]
+  },
+  "PIDG-upstream": {"commit": "b77fd2107a50c875d7219bb4f82388d5e5ea1319", "used_for": "formulation/source review; actual deployed compatible baseline is separately hashed before freeze"},
+  "flow-raster-upstream": {"commit": "2146a1c0dc3558644af420f20c21a0ad07ffa67a", "used_for": "source review; loaded tree-local compiled extension is separately hashed"},
+  "scope": "exploratory module diagnostics, not the full ResearchBoost training judge"
+}

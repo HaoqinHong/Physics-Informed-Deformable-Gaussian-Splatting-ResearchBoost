@@ -1,0 +1,89 @@
+--- a/submodules/diff-gaussian-rasterization/cuda_rasterizer/backward.cu
++++ b/submodules/diff-gaussian-rasterization/cuda_rasterizer/backward.cu
+@@ -14,6 +14,24 @@
+ #include <cooperative_groups.h>
+ #include <cooperative_groups/reduce.h>
+ namespace cg = cooperative_groups;
++
++// Aggregate only complete same-Gaussian warps. Sparse groups retain the original
++// atomics; every contribution and every accumulation stays float32.
++__device__ __forceinline__ void warpAtomicAdd(
++    unsigned int same_mask, float* address, float value)
++{
++    if (same_mask == 0xffffffffu)
++    {
++        #pragma unroll
++        for (int offset = 16; offset > 0; offset /= 2)
++            value += __shfl_down_sync(0xffffffffu, value, offset);
++        const unsigned int lane = (threadIdx.y * blockDim.x + threadIdx.x) & 31;
++        if (lane == 0)
++            atomicAdd(address, value);
++    }
++    else
++        atomicAdd(address, value);
++}
+ 
+ // Backward pass for conversion of spherical harmonics to RGB for
+ // each Gaussian.
+@@ -398,7 +416,7 @@
+ // Backward version of the rendering procedure.
+ template <uint32_t C>
+ __global__ void __launch_bounds__(BLOCK_X * BLOCK_Y)
+-renderCUDA(
++renderCUDAFullWarp(
+ 	const uint2* __restrict__ ranges,
+ 	const uint32_t* __restrict__ point_list,
+ 	int W, int H,
+@@ -508,6 +526,11 @@
+ 			// pair).
+ 			float dL_dalpha = 0.0f;
+ 			const int global_id = collected_id[j];
++            // Match IDs even with independent thread scheduling. Only full
++            // active same-ID warps take the shuffle path; others keep atomics.
++            const unsigned int active = __activemask();
++            const unsigned int same_gaussian = active == 0xffffffffu
++                ? __match_any_sync(0xffffffffu, global_id) : 0u;
+ 			for (int ch = 0; ch < C; ch++)
+ 			{
+ 				const float c = collected_colors[ch * BLOCK_SIZE + j];
+@@ -520,7 +543,7 @@
+ 				// Update the gradients w.r.t. color of the Gaussian. 
+ 				// Atomic, since this pixel is just one of potentially
+ 				// many that were affected by this Gaussian.
+-				atomicAdd(&(dL_dcolors[global_id * C + ch]), dchannel_dcolor * dL_dchannel);
++				warpAtomicAdd(same_gaussian, &(dL_dcolors[global_id * C + ch]), dchannel_dcolor * dL_dchannel);
+ 			}
+ 			dL_dalpha *= T;
+ 			// Update last alpha (to be used in the next iteration)
+@@ -542,16 +565,16 @@
+ 			const float dG_ddely = -gdy * con_o.z - gdx * con_o.y;
+ 
+ 			// Update gradients w.r.t. 2D mean position of the Gaussian
+-			atomicAdd(&dL_dmean2D[global_id].x, dL_dG * dG_ddelx * ddelx_dx);
+-			atomicAdd(&dL_dmean2D[global_id].y, dL_dG * dG_ddely * ddely_dy);
++			warpAtomicAdd(same_gaussian, &dL_dmean2D[global_id].x, dL_dG * dG_ddelx * ddelx_dx);
++			warpAtomicAdd(same_gaussian, &dL_dmean2D[global_id].y, dL_dG * dG_ddely * ddely_dy);
+ 
+ 			// Update gradients w.r.t. 2D covariance (2x2 matrix, symmetric)
+-			atomicAdd(&dL_dconic2D[global_id].x, -0.5f * gdx * d.x * dL_dG);
+-			atomicAdd(&dL_dconic2D[global_id].y, -0.5f * gdx * d.y * dL_dG);
+-			atomicAdd(&dL_dconic2D[global_id].w, -0.5f * gdy * d.y * dL_dG);
++			warpAtomicAdd(same_gaussian, &dL_dconic2D[global_id].x, -0.5f * gdx * d.x * dL_dG);
++			warpAtomicAdd(same_gaussian, &dL_dconic2D[global_id].y, -0.5f * gdx * d.y * dL_dG);
++			warpAtomicAdd(same_gaussian, &dL_dconic2D[global_id].w, -0.5f * gdy * d.y * dL_dG);
+ 
+ 			// Update gradients w.r.t. opacity of the Gaussian
+-			atomicAdd(&(dL_dopacity[global_id]), G * dL_dalpha);
++			warpAtomicAdd(same_gaussian, &(dL_dopacity[global_id]), G * dL_dalpha);
+ 		}
+ 	}
+ }
+@@ -638,7 +661,7 @@
+ 	float* dL_dopacity,
+ 	float* dL_dcolors)
+ {
+-	renderCUDA<NUM_CHANNELS> << <grid, block >> >(
++	renderCUDAFullWarp<NUM_CHANNELS> << <grid, block >> >(
+ 		ranges,
+ 		point_list,
+ 		W, H,

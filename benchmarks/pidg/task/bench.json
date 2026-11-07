@@ -1,0 +1,57 @@
+{
+  "schema": "pidg-exploratory-module-bench@1",
+  "baseline": "UNCONFIGURED",
+  "fixture": "UNCONFIGURED",
+  "public_fixture": "UNCONFIGURED",
+  "gpu_uuid": "UNCONFIGURED",
+  "scenes": [
+    "dry_ice",
+    "rubber_duck",
+    "balls_reaction",
+    "mechanics_cloth",
+    "motion_kuro"
+  ],
+  "variants": [
+    "baseline",
+    "flow-only",
+    "raster-only",
+    "both"
+  ],
+  "resolution": -1,
+  "resolution_scale": 1.0,
+  "expected_points": 100000,
+  "sh_degree": 3,
+  "active_sh_degree": 0,
+  "white_background": false,
+  "lambda_dssim": 0.2,
+  "flow_loss_weight": 0.01,
+  "physics_included": false,
+  "original_scene_modes": {
+    "dry_ice": {
+      "warm_up": 0,
+      "use_flow": true
+    },
+    "balls_reaction": {
+      "warm_up": 3000,
+      "use_flow": true
+    },
+    "mechanics_cloth": {
+      "warm_up": 3000,
+      "use_flow": true
+    },
+    "motion_kuro": {
+      "warm_up": 3000,
+      "use_flow": true
+    },
+    "rubber_duck": {
+      "warm_up": 3000,
+      "use_flow": false,
+      "config_file": "arguments/pidg/rubber_dack.py"
+    }
+  },
+  "flow_case_scope": "phase-specific enabled-flow component coverage; rubber_duck flow cases are hypothetical and do not represent its default use_flow=false training",
+  "deformation": "identity quaternion and zero translation at initialization; no DeformModel or regularizers",
+  "timing_semantics": "fixed initial module state; zero_grad plus forward or forward+backward; no optimizer step; flow visualization preserved",
+  "numerics_semantics": "two diagnostic Adam updates using upstream GaussianModel.training_setup; identity deformation inputs receive gradients but are not optimized",
+  "acceptance_scope": "exploratory module diagnostics only; full training trajectory, convergence and final quality out of scope"
+}

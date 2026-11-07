@@ -1,0 +1,56 @@
+{
+  "1": {
+    "status": "INCORRECT",
+    "checked": 1287,
+    "bitwise_identical": 438,
+    "measured_tier": "N1",
+    "violations": [
+      {
+        "gate": 1.9921106149312215e-05,
+        "rel_err": 3.0090598630667072e-05,
+        "tensor": "grad/adam#0/gaussian._xyz",
+        "where": "bicycle_i100 r0 s0"
+      },
+      {
+        "gate": 1e-05,
+        "rel_err": 1.0664917958978199e-05,
+        "tensor": "optim/adam/gaussian._xyz/exp_avg",
+        "where": "bicycle_i100 r0 s0"
+      }
+    ],
+    "exact_failures": [],
+    "errors": [],
+    "dtype_changes": [],
+    "precision_mode_changes": []
+  },
+  "2": {
+    "status": "INCORRECT",
+    "checked": 1287,
+    "bitwise_identical": 439,
+    "measured_tier": "N1",
+    "violations": [
+      {
+        "gate": 0.00014449291861032845,
+        "rel_err": 0.00036446481296508024,
+        "tensor": "delta/adam#1/gaussian._features_dc",
+        "where": "bonsai_i29900 r0 s1"
+      },
+      {
+        "gate": 0.00013949509129004804,
+        "rel_err": 0.00035840227060902007,
+        "tensor": "delta/adam#1/gaussian._features_rest",
+        "where": "bonsai_i29900 r0 s1"
+      },
+      {
+        "gate": 0.00011922900330193749,
+        "rel_err": 0.0002491116110193022,
+        "tensor": "delta/adam#1/gaussian._opacity",
+        "where": "bonsai_i29900 r0 s1"
+      }
+    ],
+    "exact_failures": [],
+    "errors": [],
+    "dtype_changes": [],
+    "precision_mode_changes": []
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "scope": "CPU patch application against pinned public source snapshots; no new GPU timing",
+  "pidg_candidate_flow_sha256": "3566f99af458574e465354834814671e38e00ce95212cca6782acdca8c26a37b",
+  "gs3d_candidate_backward_sha256": "5ae895fdc79e291eeada66361c07c596bff7d6ee923b3dfe4d266901723f96fb",
+  "restored_pidg_source_AST_matches_measured_source": true,
+  "rejected_pidg_patch_applies_separately": true
+}

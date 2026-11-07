@@ -1,0 +1,13 @@
+{
+  "commit": "ab7b569789317bf872c041a1d596454d58dcfdeb",
+  "files": {
+    "adapter.py": "aba9ae7b24528218dd76b92b2aa415dffb02612dc95072d28bfefcf75f876aec",
+    "__init__.py": "dd7b1dcc5e1fa3826ed157114668fce904512385d1c2ed9dab7f8b9fa1a1c351",
+    "trajectory.py": "893a2820fa93b63561711a9b6325b729a0c1a463cf3a119eab45bbfb55f549e0",
+    "selftest.py": "396f7ddf03effbb2d31898bfaec3799d6d59a21a384670678334080ddcd09135",
+    "stats.py": "8ef6de7c962f4637be86cbad42859f7162b30f8ecf21ed589ce5a8a97aa56317",
+    "judge.py": "6386c032405cce2f980c84adf48a0dccc48b6422db222d75071bfdbe47c46185",
+    "record.py": "d24e9c2771a0799e88265fb0de6c3264e4c3db1be0621fc4aa8fc73eec275bda",
+    "__main__.py": "32d837de95bc8553197756cc77510ece0d8da1d91ead0f5a55cd6cb09567ef1a"
+  }
+}

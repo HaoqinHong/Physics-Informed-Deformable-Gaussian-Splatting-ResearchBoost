@@ -1,0 +1,13 @@
+workspace/
+.venv/
+__pycache__/
+*.py[cod]
+*.so
+*.pth
+*.pt
+*.egg-info/
+build/
+dist/
+tmp_build/
+.DS_Store
+.env

@@ -1,0 +1,245 @@
+{
+  "scope": "first two public frames per scene; smoke/component fixture only; not a full-training dataset",
+  "files": [
+    {
+      "path": "dry_ice/transforms_train.json",
+      "bytes": 62819,
+      "sha256": "f5e4129f02588fba8a443cb3bc552de37882f7cee4a6b9d6d97db5d922f360e9",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/dry_ice/transforms_train.json"
+    },
+    {
+      "path": "dry_ice/transforms_test.json",
+      "bytes": 21161,
+      "sha256": "fdefd81549a432e7bdaecd7765c7985070b1877f43c39ffb39f5f7152c7dcdc3",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/dry_ice/transforms_test.json"
+    },
+    {
+      "path": "dry_ice/points3d.ply",
+      "bytes": 2700234,
+      "sha256": "f9a2601f8b96bb7381e8b9086c70d97790c4d93026932e332838e0e9e256c971",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/dry_ice/points3d.ply"
+    },
+    {
+      "path": "dry_ice/train/0002.png",
+      "bytes": 2180777,
+      "sha256": "cf0fe651ae38c3ee8dcd45821f50097e1cd25446c3d404a2257b2da61f619dbf",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/dry_ice/train/0002.png"
+    },
+    {
+      "path": "dry_ice/train/0003.png",
+      "bytes": 2182159,
+      "sha256": "a19ef0a7f3b96b7268ab4981eb6ddced881bd0fe44238e84b1c7297f74007111",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/dry_ice/train/0003.png"
+    },
+    {
+      "path": "dry_ice/depth_distill/0003.npy",
+      "bytes": 8294528,
+      "sha256": "24146c2c5a747eefc5ded7e0edabb2d3ab2fb5d3c7be33797f09b819f3a3aadb",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/dry_ice/depth_distill/0003.npy"
+    },
+    {
+      "path": "dry_ice/flows_flo/flow_fwd_0002.flo",
+      "bytes": 16588812,
+      "sha256": "6577f2f1709560cd6d6736c43ca117c5263d8ab9ea0ca1c744aa74b177489230",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/dry_ice/flows_flo/flow_fwd_0002.flo"
+    },
+    {
+      "path": "dry_ice/flows_flo/flow_bwd_0003.flo",
+      "bytes": 16588812,
+      "sha256": "b4e52224e6693f77d6bb307248a285f1ba68188383ec83c05e4fab6c4f10db1d",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/dry_ice/flows_flo/flow_bwd_0003.flo"
+    },
+    {
+      "path": "balls_reaction/transforms_train.json",
+      "bytes": 102647,
+      "sha256": "294a56ae3cb60d2ebff4b31be46e09a11a84f74b2753d5b07972f45b8458f591",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/balls_reaction/transforms_train.json"
+    },
+    {
+      "path": "balls_reaction/transforms_test.json",
+      "bytes": 34851,
+      "sha256": "783e1b9cc342da3ba745f6643d1363f8e592b855acd438c9e9e5acdfd24e67b9",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/balls_reaction/transforms_test.json"
+    },
+    {
+      "path": "balls_reaction/points3d.ply",
+      "bytes": 2700234,
+      "sha256": "f9a2601f8b96bb7381e8b9086c70d97790c4d93026932e332838e0e9e256c971",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/balls_reaction/points3d.ply"
+    },
+    {
+      "path": "balls_reaction/train/0002.png",
+      "bytes": 2354961,
+      "sha256": "0936f4325e08130f70ffa515586d281c36f9466acf0983dfd6611cf42a83d75b",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/balls_reaction/train/0002.png"
+    },
+    {
+      "path": "balls_reaction/train/0003.png",
+      "bytes": 2354324,
+      "sha256": "601741cf4733b9dc3cd166ccbbec77753eaee96eec9d5a342ac04b416e781064",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/balls_reaction/train/0003.png"
+    },
+    {
+      "path": "balls_reaction/depth_distill/0003.npy",
+      "bytes": 14745728,
+      "sha256": "fc573f1b6868632539ee2d2f36b6e50c091769bfd0bded59c3e15603fb97be86",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/balls_reaction/depth_distill/0003.npy"
+    },
+    {
+      "path": "balls_reaction/flows_flo/flow_fwd_0002.flo",
+      "bytes": 29491212,
+      "sha256": "9612e04e07569f1cd2000b9972dab7134c3e69eaa595a65fc78ffbd1be0863e8",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/balls_reaction/flows_flo/flow_fwd_0002.flo"
+    },
+    {
+      "path": "balls_reaction/flows_flo/flow_bwd_0003.flo",
+      "bytes": 29491212,
+      "sha256": "7ba8a9a9281c2673adc49310ee6b3d291b1e17e8a617e97375f523203ac1d471",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/balls_reaction/flows_flo/flow_bwd_0003.flo"
+    },
+    {
+      "path": "mechanics_cloth/transforms_train.json",
+      "bytes": 103271,
+      "sha256": "4fd33ea6990a7fe3864d4366cbccca70b6183d9b3f056aa2334d303cd24409fb",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/mechanics_cloth/transforms_train.json"
+    },
+    {
+      "path": "mechanics_cloth/transforms_test.json",
+      "bytes": 35091,
+      "sha256": "1c52ea7a58441730276ee30c6cc1db632cf961e3007de47dbeb91ae07d658ff7",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/mechanics_cloth/transforms_test.json"
+    },
+    {
+      "path": "mechanics_cloth/points3d.ply",
+      "bytes": 2700234,
+      "sha256": "f9a2601f8b96bb7381e8b9086c70d97790c4d93026932e332838e0e9e256c971",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/mechanics_cloth/points3d.ply"
+    },
+    {
+      "path": "mechanics_cloth/train/0002.png",
+      "bytes": 1262554,
+      "sha256": "2f9bf033eeeb65e210b82c44afc73fc914aa9f86e2d966ac923ebb0f3dd728bf",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/mechanics_cloth/train/0002.png"
+    },
+    {
+      "path": "mechanics_cloth/train/0003.png",
+      "bytes": 1264113,
+      "sha256": "7c604ed09a2540fc730c05fe3aca4bf3f2be258efdfcfd3b0fd414c89f5d824e",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/mechanics_cloth/train/0003.png"
+    },
+    {
+      "path": "mechanics_cloth/depth_distill/0003.npy",
+      "bytes": 8294528,
+      "sha256": "ef89517d1d8a1e79883c0343118e43e1a990e007d98429801f39b8dfcae5c258",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/mechanics_cloth/depth_distill/0003.npy"
+    },
+    {
+      "path": "mechanics_cloth/flows_flo/flow_fwd_0002.flo",
+      "bytes": 16588812,
+      "sha256": "81073ff54b177fe59a38f72dd019cb194798be9d0b5d2e9ba7244d4b1e448275",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/mechanics_cloth/flows_flo/flow_fwd_0002.flo"
+    },
+    {
+      "path": "mechanics_cloth/flows_flo/flow_bwd_0003.flo",
+      "bytes": 16588812,
+      "sha256": "8e58d9a1d100c3bf1b65969019bc8db44a4c5c77ccb315bd80250f81e19585a8",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/mechanics_cloth/flows_flo/flow_bwd_0003.flo"
+    },
+    {
+      "path": "motion_kuro/transforms_train.json",
+      "bytes": 137965,
+      "sha256": "4282c73c12a78139e52c2ee4dfc8c3a43fbfc545b60e2082a6f447c7d3ef3c09",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/motion_kuro/transforms_train.json"
+    },
+    {
+      "path": "motion_kuro/transforms_test.json",
+      "bytes": 46076,
+      "sha256": "0b716a7947ae66237c7c9b0607c36a2062f94bb0dcf48eec98608e6d24991c29",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/motion_kuro/transforms_test.json"
+    },
+    {
+      "path": "motion_kuro/points3d.ply",
+      "bytes": 2700234,
+      "sha256": "f9a2601f8b96bb7381e8b9086c70d97790c4d93026932e332838e0e9e256c971",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/motion_kuro/points3d.ply"
+    },
+    {
+      "path": "motion_kuro/train/0002.png",
+      "bytes": 1290994,
+      "sha256": "90c5b78dec869ca5b05c6159a493098e023e3a6ee32c7c2180887c36b12f4234",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/motion_kuro/train/0002.png"
+    },
+    {
+      "path": "motion_kuro/train/0003.png",
+      "bytes": 1286326,
+      "sha256": "91e41308ec23e5be91b72fd8024690a515b31e7fcb7fd6fc26fe936511ed8376",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/motion_kuro/train/0003.png"
+    },
+    {
+      "path": "motion_kuro/depth_distill/0003.npy",
+      "bytes": 8294528,
+      "sha256": "450f90a8fe6573042f1224f1074eec9c6527b8b1961539cf728b22e0c0141bcc",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/motion_kuro/depth_distill/0003.npy"
+    },
+    {
+      "path": "motion_kuro/flows_flo/flow_fwd_0002.flo",
+      "bytes": 16588812,
+      "sha256": "43b7eddf8579b18ed9651461c5e8e3fd6af0cd3c0a35e7c19a554c54070fa7cd",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/motion_kuro/flows_flo/flow_fwd_0002.flo"
+    },
+    {
+      "path": "motion_kuro/flows_flo/flow_bwd_0003.flo",
+      "bytes": 16588812,
+      "sha256": "2d1894a0b13b751b63ab1b19252107704ec11a746384098aeba69f3983bd5ab6",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/motion_kuro/flows_flo/flow_bwd_0003.flo"
+    },
+    {
+      "path": "rubber_duck/transforms_train.json",
+      "bytes": 137159,
+      "sha256": "8c36e8d8f7b10c53c7e0cc27e0400fedfeee6ee2d32211347af926735a01f035",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/rubber_duck/transforms_train.json"
+    },
+    {
+      "path": "rubber_duck/transforms_test.json",
+      "bytes": 45768,
+      "sha256": "f854b0273b1d91d882fabcd76386100bff2eeb1294e483ed7156d1e91d2e255e",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/rubber_duck/transforms_test.json"
+    },
+    {
+      "path": "rubber_duck/points3d.ply",
+      "bytes": 2700234,
+      "sha256": "f9a2601f8b96bb7381e8b9086c70d97790c4d93026932e332838e0e9e256c971",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/rubber_duck/points3d.ply"
+    },
+    {
+      "path": "rubber_duck/train/0002.png",
+      "bytes": 2278206,
+      "sha256": "38713d68e6629ecbd8709eaf605245e476f52d4df35af0086c366ed5eb32bd58",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/rubber_duck/train/0002.png"
+    },
+    {
+      "path": "rubber_duck/train/0003.png",
+      "bytes": 2280583,
+      "sha256": "0185dc8b3c60c130b88a06a7480cb23caaeec633ccd095f738207288e9c3332b",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/rubber_duck/train/0003.png"
+    },
+    {
+      "path": "rubber_duck/depth_distill/0003.npy",
+      "bytes": 14745728,
+      "sha256": "9e6ce4da6c51ae75d679f7a5ea38f14d433c87435bd978db16ac34a2eb42816d",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/rubber_duck/depth_distill/0003.npy"
+    },
+    {
+      "path": "rubber_duck/flows_flo/flow_fwd_0002.flo",
+      "bytes": 29491212,
+      "sha256": "77e4ed00acd13ea33f5a107f7689be58c8754727f4ce6efcd9cb45bcfc4e8394",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/rubber_duck/flows_flo/flow_fwd_0002.flo"
+    },
+    {
+      "path": "rubber_duck/flows_flo/flow_bwd_0003.flo",
+      "bytes": 29491212,
+      "sha256": "1c6514ed5c1644efb5cc0186c23f3f2906a61a1e3be084086c3ed6b13c117e89",
+      "url": "https://huggingface.co/datasets/HaoqinHong/Physics-Informed-Deformable-Gaussian-Splatting/resolve/main/rubber_duck/flows_flo/flow_bwd_0003.flo"
+    }
+  ]
+}

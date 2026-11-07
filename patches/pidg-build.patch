@@ -1,0 +1,15 @@
+--- a/submodules/flow-based-diff-gaussian-rasterization/setup.py
++++ b/submodules/flow-based-diff-gaussian-rasterization/setup.py
+@@ -26,7 +26,11 @@
+             "cuda_rasterizer/backward.cu",
+             "rasterize_points.cu",
+             "ext.cpp"],
+-            extra_compile_args={"nvcc": ["-I" + os.path.join(os.path.dirname(os.path.abspath(__file__)), "third_party/glm/")]})
++            # Keep includes out of nvcc post-flags: PyTorch treats any post-flag
++            # containing "arch" (including a research directory path) as an
++            # explicit architecture switch and skips TORCH_CUDA_ARCH_LIST.
++            include_dirs=[os.path.join(os.path.dirname(os.path.abspath(__file__)), "third_party/glm/")],
++            extra_compile_args={"nvcc": []})
+         ],
+     cmdclass={
+         'build_ext': BuildExtension

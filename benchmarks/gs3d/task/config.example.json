@@ -1,0 +1,45 @@
+{
+  "reference": "UNCONFIGURED",
+  "data_manifest": "UNCONFIGURED",
+  "gpu_uuid": "UNCONFIGURED",
+  "extension_roots": [
+    "submodules/diff-gaussian-rasterization",
+    "submodules/simple-knn"
+  ],
+  "precision": "upstream",
+  "seeds": [
+    0,
+    1
+  ],
+  "schedule": {
+    "iterations": 30000,
+    "test": [
+      7000,
+      30000
+    ],
+    "save": [
+      7000,
+      30000
+    ],
+    "checkpoint": [
+      100,
+      7000,
+      29900,
+      30000
+    ]
+  },
+  "scenes": {
+    "bonsai": {
+      "path": "UNCONFIGURED",
+      "images": "images_2"
+    },
+    "bicycle": {
+      "path": "UNCONFIGURED",
+      "images": "images_4"
+    },
+    "garden": {
+      "path": "UNCONFIGURED",
+      "images": "images_4"
+    }
+  }
+}

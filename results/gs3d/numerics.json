@@ -1,0 +1,245 @@
+{
+  "arbitration": [],
+  "bitwise_identical": 431,
+  "bitwise_trusted": true,
+  "checked": 1287,
+  "closest": [
+    {
+      "gate": 5.738821128288091e-06,
+      "ratio": 11.05621146730895,
+      "rel_err": 6.344961996741368e-05,
+      "tensor": "out/gaussian.viewspace_grad#0",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "gate": 1.2554195269466465e-05,
+      "ratio": 5.464232569056901,
+      "rel_err": 6.859904266971874e-05,
+      "tensor": "optim/adam/gaussian._rotation/exp_avg_sq",
+      "where": "bonsai_i29900 r0 s2"
+    },
+    {
+      "gate": 1e-05,
+      "ratio": 4.555754699400293,
+      "rel_err": 4.5557546994002926e-05,
+      "tensor": "optim/adam/gaussian._scaling/exp_avg_sq",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "gate": 1e-05,
+      "ratio": 4.521767134730946,
+      "rel_err": 4.521767134730947e-05,
+      "tensor": "optim/adam/gaussian._scaling/exp_avg_sq",
+      "where": "bonsai_i100 r0 s1"
+    },
+    {
+      "gate": 1e-05,
+      "ratio": 4.434228016897768,
+      "rel_err": 4.434228016897768e-05,
+      "tensor": "optim/adam/gaussian._scaling/exp_avg_sq",
+      "where": "bonsai_i100 r0 s2"
+    },
+    {
+      "gate": 2.2869079247000815e-05,
+      "ratio": 2.2484216626152254,
+      "rel_err": 5.141933318302092e-05,
+      "tensor": "grad/adam#0/gaussian._features_dc",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "gate": 1e-05,
+      "ratio": 1.974344170179354,
+      "rel_err": 1.9743441701793543e-05,
+      "tensor": "optim/adam/gaussian._rotation/exp_avg_sq",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "gate": 1.977489435642533e-05,
+      "ratio": 1.7733427323929625,
+      "rel_err": 3.506766519080547e-05,
+      "tensor": "grad/adam#0/gaussian._opacity",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "gate": 1.2554195269466465e-05,
+      "ratio": 1.573143924610947,
+      "rel_err": 1.974955601654066e-05,
+      "tensor": "optim/adam/gaussian._rotation/exp_avg_sq",
+      "where": "bonsai_i100 r0 s1"
+    },
+    {
+      "gate": 1e-05,
+      "ratio": 1.4553280794366106,
+      "rel_err": 1.4553280794366106e-05,
+      "tensor": "optim/adam/gaussian._features_dc/exp_avg",
+      "where": "bonsai_i100 r0 s0"
+    }
+  ],
+  "dtype_changes": [],
+  "errors": [],
+  "exact_failures": [],
+  "excluded": {
+    "After native atomic backward + Adam, discrete raster visibility/radii values are diagnostic; names, shape, dtype and finiteness remain checked. Initial visibility/radii are exact invariant hashes.": {
+      "count": 36,
+      "examples": [
+        "bicycle_i100 r0 s1 out/gaussian.post_radii#0",
+        "bicycle_i100 r0 s1 out/gaussian.post_visibility#0",
+        "bicycle_i100 r0 s2 out/gaussian.post_radii#1",
+        "bicycle_i100 r0 s2 out/gaussian.post_visibility#1",
+        "bicycle_i29900 r0 s1 out/gaussian.post_radii#0"
+      ]
+    }
+  },
+  "measured_tier": "N1",
+  "precision_mode_changes": [],
+  "status": "INCORRECT",
+  "thresholds_sha256": "6c7e4c32df2aacea31403048aa1b0aa03da16843c906106687f00359ee4ad322",
+  "traced_only_cases": [],
+  "unresolved": [
+    {
+      "arbitration": "no fp64 reference",
+      "gate": 2.2869079247000815e-05,
+      "rel_err": 5.141933318302092e-05,
+      "tensor": "grad/adam#0/gaussian._features_dc",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "arbitration": "no fp64 reference",
+      "gate": 1.977489435642533e-05,
+      "rel_err": 3.506766519080547e-05,
+      "tensor": "grad/adam#0/gaussian._opacity",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "arbitration": "no fp64 reference",
+      "gate": 1e-05,
+      "rel_err": 1.4553280794366106e-05,
+      "tensor": "optim/adam/gaussian._features_dc/exp_avg",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "arbitration": "no fp64 reference",
+      "gate": 1e-05,
+      "rel_err": 1.9743441701793543e-05,
+      "tensor": "optim/adam/gaussian._rotation/exp_avg_sq",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "arbitration": "no fp64 reference",
+      "gate": 1e-05,
+      "rel_err": 4.5557546994002926e-05,
+      "tensor": "optim/adam/gaussian._scaling/exp_avg_sq",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "arbitration": "no fp64 reference",
+      "gate": 5.738821128288091e-06,
+      "rel_err": 6.344961996741368e-05,
+      "tensor": "out/gaussian.viewspace_grad#0",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "arbitration": "no fp64 reference",
+      "gate": 1.2554195269466465e-05,
+      "rel_err": 1.974955601654066e-05,
+      "tensor": "optim/adam/gaussian._rotation/exp_avg_sq",
+      "where": "bonsai_i100 r0 s1"
+    },
+    {
+      "arbitration": "no fp64 reference",
+      "gate": 1e-05,
+      "rel_err": 4.521767134730947e-05,
+      "tensor": "optim/adam/gaussian._scaling/exp_avg_sq",
+      "where": "bonsai_i100 r0 s1"
+    },
+    {
+      "arbitration": "no fp64 reference",
+      "gate": 1.2554195269466465e-05,
+      "rel_err": 1.719350999351564e-05,
+      "tensor": "optim/adam/gaussian._rotation/exp_avg_sq",
+      "where": "bonsai_i100 r0 s2"
+    },
+    {
+      "arbitration": "no fp64 reference",
+      "gate": 1e-05,
+      "rel_err": 4.434228016897768e-05,
+      "tensor": "optim/adam/gaussian._scaling/exp_avg_sq",
+      "where": "bonsai_i100 r0 s2"
+    },
+    {
+      "arbitration": "no fp64 reference",
+      "gate": 1.2554195269466465e-05,
+      "rel_err": 6.859904266971874e-05,
+      "tensor": "optim/adam/gaussian._rotation/exp_avg_sq",
+      "where": "bonsai_i29900 r0 s2"
+    }
+  ],
+  "violations": [
+    {
+      "gate": 2.2869079247000815e-05,
+      "rel_err": 5.141933318302092e-05,
+      "tensor": "grad/adam#0/gaussian._features_dc",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "gate": 1.977489435642533e-05,
+      "rel_err": 3.506766519080547e-05,
+      "tensor": "grad/adam#0/gaussian._opacity",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "gate": 1e-05,
+      "rel_err": 1.4553280794366106e-05,
+      "tensor": "optim/adam/gaussian._features_dc/exp_avg",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "gate": 1e-05,
+      "rel_err": 1.9743441701793543e-05,
+      "tensor": "optim/adam/gaussian._rotation/exp_avg_sq",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "gate": 1e-05,
+      "rel_err": 4.5557546994002926e-05,
+      "tensor": "optim/adam/gaussian._scaling/exp_avg_sq",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "gate": 5.738821128288091e-06,
+      "rel_err": 6.344961996741368e-05,
+      "tensor": "out/gaussian.viewspace_grad#0",
+      "where": "bonsai_i100 r0 s0"
+    },
+    {
+      "gate": 1.2554195269466465e-05,
+      "rel_err": 1.974955601654066e-05,
+      "tensor": "optim/adam/gaussian._rotation/exp_avg_sq",
+      "where": "bonsai_i100 r0 s1"
+    },
+    {
+      "gate": 1e-05,
+      "rel_err": 4.521767134730947e-05,
+      "tensor": "optim/adam/gaussian._scaling/exp_avg_sq",
+      "where": "bonsai_i100 r0 s1"
+    },
+    {
+      "gate": 1.2554195269466465e-05,
+      "rel_err": 1.719350999351564e-05,
+      "tensor": "optim/adam/gaussian._rotation/exp_avg_sq",
+      "where": "bonsai_i100 r0 s2"
+    },
+    {
+      "gate": 1e-05,
+      "rel_err": 4.434228016897768e-05,
+      "tensor": "optim/adam/gaussian._scaling/exp_avg_sq",
+      "where": "bonsai_i100 r0 s2"
+    },
+    {
+      "gate": 1.2554195269466465e-05,
+      "rel_err": 6.859904266971874e-05,
+      "tensor": "optim/adam/gaussian._rotation/exp_avg_sq",
+      "where": "bonsai_i29900 r0 s2"
+    }
+  ]
+}

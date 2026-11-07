@@ -1,0 +1,3786 @@
+{
+  "scope": "PIDG module group, not full training",
+  "data_scope": "five scenes, original100000points, original two train frames0002/0003, width1600 nativepolicy",
+  "retained": "exact-zero-eliding gather backward; original CUDA raster source",
+  "confirmation": {
+    "arm_median_sm_clock_mhz": [
+      1410.0,
+      1410.0,
+      1410.0
+    ],
+    "baseline_ms": 9369.788226981958,
+    "baseline_window_relative_gaps": [
+      0.0008949708170146231,
+      0.013738274793598711,
+      0.004629602483799635
+    ],
+    "benefit_claim": "exploratory observation only; no target speedup and no full-training verdict",
+    "candidate_ms": 2244.3107018868127,
+    "clock_comparability_available": true,
+    "clock_relative_gap": 0.0,
+    "errors": [],
+    "formal_benefit_verdict": "UNAVAILABLE_SHARED_WORKLOAD",
+    "mode": "forward-backward",
+    "noise_resolution_relative": 0.03274291082501281,
+    "observed_speedup": 4.174906896404625,
+    "order": "baseline-candidate-baseline; three independent processes",
+    "protocol": {
+      "iterations": 3,
+      "protocol": "SHORT_EXPLORATORY",
+      "warmup": 1,
+      "windows": 3
+    },
+    "resolved_above_observed_noise": true,
+    "scene": "dry_ice",
+    "scope": "exploratory_module_diagnostics_only; no full-training acceptance or convergence evidence",
+    "shared_workload": true,
+    "status": "EXPLORATORY",
+    "variant": "both",
+    "workload": "triple-flow"
+  },
+  "confirmation_disposition": "SUPPORTED_RETAINED_FLOW_WITH_ORIGINAL_RASTER",
+  "checks": [
+    {
+      "stage": "flow-only",
+      "variant": "flow-only",
+      "status": "MODULE_DIAGNOSTICS_REJECTED_OR_UNRESOLVED",
+      "generic": {
+        "arbitration": [],
+        "bitwise_identical": 1168,
+        "bitwise_trusted": true,
+        "checked": 2435,
+        "closest": [
+          {
+            "gate": 1e-05,
+            "ratio": 40.57172904143305,
+            "rel_err": 0.00040571729041433054,
+            "tensor": "delta/adam#0/module.velocity_net.shared_net.2.weight",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "ratio": 16.719627740471353,
+            "rel_err": 0.00016719627740471353,
+            "tensor": "delta/adam#0/module.velocity_net.planes",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "ratio": 5.71096466686637,
+            "rel_err": 5.7109646668663704e-05,
+            "tensor": "optim/adam/module.velocity_net.index_embed.weight/exp_avg_sq",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "ratio": 5.159622399175164,
+            "rel_err": 5.159622399175164e-05,
+            "tensor": "delta/adam#0/module.velocity_net.shared_net.0.weight",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "ratio": 4.0092244602201035,
+            "rel_err": 1.9199990279119594e-05,
+            "tensor": "out/module.taps.conic_2D_inv#4",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "ratio": 4.008203208456163,
+            "rel_err": 1.9195099551714645e-05,
+            "tensor": "out/module.taps.conic_2D_inv#5",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "ratio": 3.99639921931568,
+            "rel_err": 1.913857079434503e-05,
+            "tensor": "out/module.taps.conic_2D_inv#3",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.0006039245695954887,
+            "ratio": 3.02308375829005,
+            "rel_err": 0.0018257145575764308,
+            "tensor": "delta/adam#1/module.velocity_net.index_embed.weight",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 1e-05,
+            "ratio": 2.9802678369887055,
+            "rel_err": 2.980267836988706e-05,
+            "tensor": "optim/adam/module.velocity_net.index_embed.weight/exp_avg_sq",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 0.00014333569938385104,
+            "ratio": 2.8560488768077517,
+            "rel_err": 0.0004093737632317013,
+            "tensor": "delta/adam#1/module.velocity_net.planes",
+            "where": "dry_ice__triple-flow r0 s1"
+          }
+        ],
+        "dtype_changes": [],
+        "errors": [],
+        "exact_failures": [],
+        "excluded": {},
+        "measured_tier": "N1",
+        "precision_mode_changes": [],
+        "status": "INCORRECT",
+        "thresholds_sha256": "797657263952814cb1bc94366fd675aac209460b1860a1e03114650bbaab0956",
+        "traced_only_cases": [],
+        "unresolved": [
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.3018343074109524e-05,
+            "tensor": "delta/adam#0/module.velocity_net.index_embed.weight",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 5.159622399175164e-05,
+            "tensor": "delta/adam#0/module.velocity_net.shared_net.0.weight",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.3296505990460222e-05,
+            "tensor": "grad/adam#0/module.velocity_net.index_embed.weight",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.3324784987013136e-05,
+            "tensor": "optim/adam/module.velocity_net.index_embed.weight/exp_avg",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 5.7109646668663704e-05,
+            "tensor": "optim/adam/module.velocity_net.index_embed.weight/exp_avg_sq",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.0006039245695954887,
+            "rel_err": 0.001087196490642568,
+            "tensor": "delta/adam#1/module.velocity_net.index_embed.weight",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.788953691573938e-06,
+            "rel_err": 5.67535889479265e-06,
+            "tensor": "out/module.taps.conic_2D_inv#3",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.788953691573938e-06,
+            "rel_err": 5.746992031331313e-06,
+            "tensor": "out/module.taps.conic_2D_inv#4",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.788953691573938e-06,
+            "rel_err": 5.6153756508815665e-06,
+            "tensor": "out/module.taps.conic_2D_inv#5",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.008774242223198473,
+            "rel_err": 0.009191688309352842,
+            "tensor": "out/module.taps.weight_per_gs_pixel#3",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.008774242223198473,
+            "rel_err": 0.00910609833699013,
+            "tensor": "out/module.taps.weight_per_gs_pixel#4",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.008774242223198473,
+            "rel_err": 0.009858649531585748,
+            "tensor": "out/module.taps.weight_per_gs_pixel#5",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.013104508455026705,
+            "rel_err": 0.015332039495965663,
+            "tensor": "out/module.taps.x_mu#3",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.013104508455026705,
+            "rel_err": 0.015410646104699152,
+            "tensor": "out/module.taps.x_mu#4",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.013104508455026705,
+            "rel_err": 0.015697864578819495,
+            "tensor": "out/module.taps.x_mu#5",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 2.4336524387829094e-05,
+            "tensor": "delta/adam#0/module.velocity_net.index_embed.weight",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 2.980267836988706e-05,
+            "tensor": "optim/adam/module.velocity_net.index_embed.weight/exp_avg_sq",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.011243857810499108,
+            "rel_err": 0.019646989715379606,
+            "tensor": "delta/adam#1/module._scaling",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.00014333569938385104,
+            "rel_err": 0.0004093737632317013,
+            "tensor": "delta/adam#1/module.velocity_net.planes",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.134004289312793e-05,
+            "rel_err": 6.175500746992727e-05,
+            "tensor": "delta/adam#1/module.velocity_net.velocity_head.bias",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 3.1793714418859234e-05,
+            "rel_err": 4.93896857095925e-05,
+            "tensor": "delta/adam#1/module.velocity_net.velocity_head.weight",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 2.3416246234386028e-06,
+            "rel_err": 3.587926434033453e-06,
+            "tensor": "out/module.taps.conic_2D#3",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 2.3416246234386028e-06,
+            "rel_err": 3.5499167789707453e-06,
+            "tensor": "out/module.taps.conic_2D#4",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 2.3416246234386028e-06,
+            "rel_err": 3.6154277095252716e-06,
+            "tensor": "out/module.taps.conic_2D#5",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.788953691573938e-06,
+            "rel_err": 1.913857079434503e-05,
+            "tensor": "out/module.taps.conic_2D_inv#3",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.788953691573938e-06,
+            "rel_err": 1.9199990279119594e-05,
+            "tensor": "out/module.taps.conic_2D_inv#4",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.788953691573938e-06,
+            "rel_err": 1.9195099551714645e-05,
+            "tensor": "out/module.taps.conic_2D_inv#5",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.008774242223198473,
+            "rel_err": 0.017619037200023037,
+            "tensor": "out/module.taps.weight_per_gs_pixel#3",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.008774242223198473,
+            "rel_err": 0.017456538321258788,
+            "tensor": "out/module.taps.weight_per_gs_pixel#4",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.008774242223198473,
+            "rel_err": 0.016598943119201456,
+            "tensor": "out/module.taps.weight_per_gs_pixel#5",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.013104508455026705,
+            "rel_err": 0.020240070288365226,
+            "tensor": "out/module.taps.x_mu#3",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.013104508455026705,
+            "rel_err": 0.020174278180757853,
+            "tensor": "out/module.taps.x_mu#4",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.013104508455026705,
+            "rel_err": 0.019292731121509882,
+            "tensor": "out/module.taps.x_mu#5",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.011243857810499108,
+            "rel_err": 0.011939364214716216,
+            "tensor": "delta/adam#1/module._scaling",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.00014333569938385104,
+            "rel_err": 0.0002034418394351688,
+            "tensor": "delta/adam#1/module.velocity_net.planes",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.00013885243905605295,
+            "rel_err": 0.00018748501095135317,
+            "tensor": "delta/adam#1/module.velocity_net.shared_net.0.weight",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 3.1793714418859234e-05,
+            "rel_err": 8.206135866723962e-05,
+            "tensor": "delta/adam#1/module.velocity_net.velocity_head.weight",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 7.281580296849408e-05,
+            "rel_err": 0.00011325661336073226,
+            "tensor": "grad/adam#1/module._opacity",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.00011643374048568334,
+            "rel_err": 0.00019387252102815898,
+            "tensor": "grad/adam#1/module._xyz",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.00023857090475771562,
+            "rel_err": 0.00024028841028365345,
+            "tensor": "grad/adam#1/module.velocity_net.index_embed.weight",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.00012146097610232342,
+            "rel_err": 0.0002601866787857282,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 3.83438871677845e-05,
+            "rel_err": 5.948658621611448e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 6.152185306026217e-05,
+            "rel_err": 0.00010163669818588304,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 2.4829597468752243e-05,
+            "rel_err": 2.775471426834342e-05,
+            "tensor": "optim/adam/module.velocity_net.shared_net.0.weight/exp_avg",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5151012863294147e-05,
+            "rel_err": 1.533205588386248e-05,
+            "tensor": "out/module.taps.alpha#3",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5151012863294147e-05,
+            "rel_err": 1.5337251558914357e-05,
+            "tensor": "out/module.taps.alpha#4",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5157765536569604e-05,
+            "rel_err": 1.5335347256394675e-05,
+            "tensor": "out/module.taps.render#3",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5157765536569604e-05,
+            "rel_err": 1.5328977851581496e-05,
+            "tensor": "out/module.taps.render#4",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.013104508455026705,
+            "rel_err": 0.013651419272911396,
+            "tensor": "out/module.taps.x_mu#3",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.013104508455026705,
+            "rel_err": 0.013581707717508272,
+            "tensor": "out/module.taps.x_mu#4",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.013104508455026705,
+            "rel_err": 0.01574278374963344,
+            "tensor": "out/module.taps.x_mu#5",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 0.00016719627740471353,
+            "tensor": "delta/adam#0/module.velocity_net.planes",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 0.00040571729041433054,
+            "tensor": "delta/adam#0/module.velocity_net.shared_net.2.weight",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.011243857810499108,
+            "rel_err": 0.014890764443028575,
+            "tensor": "delta/adam#1/module._scaling",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.0006039245695954887,
+            "rel_err": 0.0018257145575764308,
+            "tensor": "delta/adam#1/module.velocity_net.index_embed.weight",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.011489229251470908,
+            "rel_err": 0.018138493860848884,
+            "tensor": "grad/adam#1/module._scaling",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.00039699639120363485,
+            "rel_err": 0.0004177899169314642,
+            "tensor": "grad/adam#1/module.velocity_net.time_proj.bias",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.00039603673224696575,
+            "rel_err": 0.000417683328005214,
+            "tensor": "grad/adam#1/module.velocity_net.time_proj.weight",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.006019320524443874,
+            "rel_err": 0.00842767002608584,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.788953691573938e-06,
+            "rel_err": 4.967155598089225e-06,
+            "tensor": "out/module.taps.conic_2D_inv#3",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.788953691573938e-06,
+            "rel_err": 5.039118515730011e-06,
+            "tensor": "out/module.taps.conic_2D_inv#4",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.788953691573938e-06,
+            "rel_err": 4.986101130544408e-06,
+            "tensor": "out/module.taps.conic_2D_inv#5",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.008774242223198473,
+            "rel_err": 0.011013946994032551,
+            "tensor": "out/module.taps.weight_per_gs_pixel#3",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.008774242223198473,
+            "rel_err": 0.011111454358842573,
+            "tensor": "out/module.taps.weight_per_gs_pixel#4",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.008774242223198473,
+            "rel_err": 0.011200024909949011,
+            "tensor": "out/module.taps.weight_per_gs_pixel#5",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.013104508455026705,
+            "rel_err": 0.018656088432548422,
+            "tensor": "out/module.taps.x_mu#3",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.013104508455026705,
+            "rel_err": 0.018583269418834165,
+            "tensor": "out/module.taps.x_mu#4",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.013104508455026705,
+            "rel_err": 0.018084344673214545,
+            "tensor": "out/module.taps.x_mu#5",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.51810151354364e-05,
+            "tensor": "delta/adam#0/module.velocity_net.index_embed.weight",
+            "where": "rubber_duck__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.00842083797824825,
+            "rel_err": 0.00937367672182946,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 2.3416246234386028e-06,
+            "rel_err": 2.6035109841047295e-06,
+            "tensor": "out/module.taps.conic_2D#3",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 2.3416246234386028e-06,
+            "rel_err": 2.6271437474470375e-06,
+            "tensor": "out/module.taps.conic_2D#4",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 2.3416246234386028e-06,
+            "rel_err": 2.5990112646720412e-06,
+            "tensor": "out/module.taps.conic_2D#5",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.788953691573938e-06,
+            "rel_err": 6.377854943745275e-06,
+            "tensor": "out/module.taps.conic_2D_inv#3",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.788953691573938e-06,
+            "rel_err": 6.2765784014906016e-06,
+            "tensor": "out/module.taps.conic_2D_inv#4",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.788953691573938e-06,
+            "rel_err": 6.342206088509791e-06,
+            "tensor": "out/module.taps.conic_2D_inv#5",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.008774242223198473,
+            "rel_err": 0.013328913945520268,
+            "tensor": "out/module.taps.weight_per_gs_pixel#3",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.008774242223198473,
+            "rel_err": 0.013212016179289224,
+            "tensor": "out/module.taps.weight_per_gs_pixel#4",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.008774242223198473,
+            "rel_err": 0.01209945744984123,
+            "tensor": "out/module.taps.weight_per_gs_pixel#5",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.013104508455026705,
+            "rel_err": 0.02054757616269984,
+            "tensor": "out/module.taps.x_mu#3",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.013104508455026705,
+            "rel_err": 0.020507105587550107,
+            "tensor": "out/module.taps.x_mu#4",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 0.013104508455026705,
+            "rel_err": 0.018294665779558798,
+            "tensor": "out/module.taps.x_mu#5",
+            "where": "rubber_duck__triple-flow r0 s1"
+          }
+        ],
+        "violations": [
+          {
+            "gate": 1e-05,
+            "rel_err": 1.3018343074109524e-05,
+            "tensor": "delta/adam#0/module.velocity_net.index_embed.weight",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 5.159622399175164e-05,
+            "tensor": "delta/adam#0/module.velocity_net.shared_net.0.weight",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.3296505990460222e-05,
+            "tensor": "grad/adam#0/module.velocity_net.index_embed.weight",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.3324784987013136e-05,
+            "tensor": "optim/adam/module.velocity_net.index_embed.weight/exp_avg",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 5.7109646668663704e-05,
+            "tensor": "optim/adam/module.velocity_net.index_embed.weight/exp_avg_sq",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 0.0006039245695954887,
+            "rel_err": 0.001087196490642568,
+            "tensor": "delta/adam#1/module.velocity_net.index_embed.weight",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "rel_err": 5.67535889479265e-06,
+            "tensor": "out/module.taps.conic_2D_inv#3",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "rel_err": 5.746992031331313e-06,
+            "tensor": "out/module.taps.conic_2D_inv#4",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "rel_err": 5.6153756508815665e-06,
+            "tensor": "out/module.taps.conic_2D_inv#5",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.008774242223198473,
+            "rel_err": 0.009191688309352842,
+            "tensor": "out/module.taps.weight_per_gs_pixel#3",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.008774242223198473,
+            "rel_err": 0.00910609833699013,
+            "tensor": "out/module.taps.weight_per_gs_pixel#4",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.008774242223198473,
+            "rel_err": 0.009858649531585748,
+            "tensor": "out/module.taps.weight_per_gs_pixel#5",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "rel_err": 0.015332039495965663,
+            "tensor": "out/module.taps.x_mu#3",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "rel_err": 0.015410646104699152,
+            "tensor": "out/module.taps.x_mu#4",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "rel_err": 0.015697864578819495,
+            "tensor": "out/module.taps.x_mu#5",
+            "where": "balls_reaction__triple-flow r0 s1"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 2.4336524387829094e-05,
+            "tensor": "delta/adam#0/module.velocity_net.index_embed.weight",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 2.980267836988706e-05,
+            "tensor": "optim/adam/module.velocity_net.index_embed.weight/exp_avg_sq",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 0.011243857810499108,
+            "rel_err": 0.019646989715379606,
+            "tensor": "delta/adam#1/module._scaling",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.00014333569938385104,
+            "rel_err": 0.0004093737632317013,
+            "tensor": "delta/adam#1/module.velocity_net.planes",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.134004289312793e-05,
+            "rel_err": 6.175500746992727e-05,
+            "tensor": "delta/adam#1/module.velocity_net.velocity_head.bias",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 3.1793714418859234e-05,
+            "rel_err": 4.93896857095925e-05,
+            "tensor": "delta/adam#1/module.velocity_net.velocity_head.weight",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 2.3416246234386028e-06,
+            "rel_err": 3.587926434033453e-06,
+            "tensor": "out/module.taps.conic_2D#3",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 2.3416246234386028e-06,
+            "rel_err": 3.5499167789707453e-06,
+            "tensor": "out/module.taps.conic_2D#4",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 2.3416246234386028e-06,
+            "rel_err": 3.6154277095252716e-06,
+            "tensor": "out/module.taps.conic_2D#5",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "rel_err": 1.913857079434503e-05,
+            "tensor": "out/module.taps.conic_2D_inv#3",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "rel_err": 1.9199990279119594e-05,
+            "tensor": "out/module.taps.conic_2D_inv#4",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "rel_err": 1.9195099551714645e-05,
+            "tensor": "out/module.taps.conic_2D_inv#5",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.008774242223198473,
+            "rel_err": 0.017619037200023037,
+            "tensor": "out/module.taps.weight_per_gs_pixel#3",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.008774242223198473,
+            "rel_err": 0.017456538321258788,
+            "tensor": "out/module.taps.weight_per_gs_pixel#4",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.008774242223198473,
+            "rel_err": 0.016598943119201456,
+            "tensor": "out/module.taps.weight_per_gs_pixel#5",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "rel_err": 0.020240070288365226,
+            "tensor": "out/module.taps.x_mu#3",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "rel_err": 0.020174278180757853,
+            "tensor": "out/module.taps.x_mu#4",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "rel_err": 0.019292731121509882,
+            "tensor": "out/module.taps.x_mu#5",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.011243857810499108,
+            "rel_err": 0.011939364214716216,
+            "tensor": "delta/adam#1/module._scaling",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.00014333569938385104,
+            "rel_err": 0.0002034418394351688,
+            "tensor": "delta/adam#1/module.velocity_net.planes",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.00013885243905605295,
+            "rel_err": 0.00018748501095135317,
+            "tensor": "delta/adam#1/module.velocity_net.shared_net.0.weight",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 3.1793714418859234e-05,
+            "rel_err": 8.206135866723962e-05,
+            "tensor": "delta/adam#1/module.velocity_net.velocity_head.weight",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 7.281580296849408e-05,
+            "rel_err": 0.00011325661336073226,
+            "tensor": "grad/adam#1/module._opacity",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.00011643374048568334,
+            "rel_err": 0.00019387252102815898,
+            "tensor": "grad/adam#1/module._xyz",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.00023857090475771562,
+            "rel_err": 0.00024028841028365345,
+            "tensor": "grad/adam#1/module.velocity_net.index_embed.weight",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.00012146097610232342,
+            "rel_err": 0.0002601866787857282,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 3.83438871677845e-05,
+            "rel_err": 5.948658621611448e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 6.152185306026217e-05,
+            "rel_err": 0.00010163669818588304,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 2.4829597468752243e-05,
+            "rel_err": 2.775471426834342e-05,
+            "tensor": "optim/adam/module.velocity_net.shared_net.0.weight/exp_avg",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 1.5151012863294147e-05,
+            "rel_err": 1.533205588386248e-05,
+            "tensor": "out/module.taps.alpha#3",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 1.5151012863294147e-05,
+            "rel_err": 1.5337251558914357e-05,
+            "tensor": "out/module.taps.alpha#4",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 1.5157765536569604e-05,
+            "rel_err": 1.5335347256394675e-05,
+            "tensor": "out/module.taps.render#3",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 1.5157765536569604e-05,
+            "rel_err": 1.5328977851581496e-05,
+            "tensor": "out/module.taps.render#4",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "rel_err": 0.013651419272911396,
+            "tensor": "out/module.taps.x_mu#3",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "rel_err": 0.013581707717508272,
+            "tensor": "out/module.taps.x_mu#4",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "rel_err": 0.01574278374963344,
+            "tensor": "out/module.taps.x_mu#5",
+            "where": "mechanics_cloth__triple-flow r0 s1"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 0.00016719627740471353,
+            "tensor": "delta/adam#0/module.velocity_net.planes",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 0.00040571729041433054,
+            "tensor": "delta/adam#0/module.velocity_net.shared_net.2.weight",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 0.011243857810499108,
+            "rel_err": 0.014890764443028575,
+            "tensor": "delta/adam#1/module._scaling",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.0006039245695954887,
+            "rel_err": 0.0018257145575764308,
+            "tensor": "delta/adam#1/module.velocity_net.index_embed.weight",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.011489229251470908,
+            "rel_err": 0.018138493860848884,
+            "tensor": "grad/adam#1/module._scaling",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.00039699639120363485,
+            "rel_err": 0.0004177899169314642,
+            "tensor": "grad/adam#1/module.velocity_net.time_proj.bias",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.00039603673224696575,
+            "rel_err": 0.000417683328005214,
+            "tensor": "grad/adam#1/module.velocity_net.time_proj.weight",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.006019320524443874,
+            "rel_err": 0.00842767002608584,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "rel_err": 4.967155598089225e-06,
+            "tensor": "out/module.taps.conic_2D_inv#3",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "rel_err": 5.039118515730011e-06,
+            "tensor": "out/module.taps.conic_2D_inv#4",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "rel_err": 4.986101130544408e-06,
+            "tensor": "out/module.taps.conic_2D_inv#5",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.008774242223198473,
+            "rel_err": 0.011013946994032551,
+            "tensor": "out/module.taps.weight_per_gs_pixel#3",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.008774242223198473,
+            "rel_err": 0.011111454358842573,
+            "tensor": "out/module.taps.weight_per_gs_pixel#4",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.008774242223198473,
+            "rel_err": 0.011200024909949011,
+            "tensor": "out/module.taps.weight_per_gs_pixel#5",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "rel_err": 0.018656088432548422,
+            "tensor": "out/module.taps.x_mu#3",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "rel_err": 0.018583269418834165,
+            "tensor": "out/module.taps.x_mu#4",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "rel_err": 0.018084344673214545,
+            "tensor": "out/module.taps.x_mu#5",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.51810151354364e-05,
+            "tensor": "delta/adam#0/module.velocity_net.index_embed.weight",
+            "where": "rubber_duck__triple-flow r0 s0"
+          },
+          {
+            "gate": 0.00842083797824825,
+            "rel_err": 0.00937367672182946,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 2.3416246234386028e-06,
+            "rel_err": 2.6035109841047295e-06,
+            "tensor": "out/module.taps.conic_2D#3",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 2.3416246234386028e-06,
+            "rel_err": 2.6271437474470375e-06,
+            "tensor": "out/module.taps.conic_2D#4",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 2.3416246234386028e-06,
+            "rel_err": 2.5990112646720412e-06,
+            "tensor": "out/module.taps.conic_2D#5",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "rel_err": 6.377854943745275e-06,
+            "tensor": "out/module.taps.conic_2D_inv#3",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "rel_err": 6.2765784014906016e-06,
+            "tensor": "out/module.taps.conic_2D_inv#4",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "rel_err": 6.342206088509791e-06,
+            "tensor": "out/module.taps.conic_2D_inv#5",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.008774242223198473,
+            "rel_err": 0.013328913945520268,
+            "tensor": "out/module.taps.weight_per_gs_pixel#3",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.008774242223198473,
+            "rel_err": 0.013212016179289224,
+            "tensor": "out/module.taps.weight_per_gs_pixel#4",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.008774242223198473,
+            "rel_err": 0.01209945744984123,
+            "tensor": "out/module.taps.weight_per_gs_pixel#5",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "rel_err": 0.02054757616269984,
+            "tensor": "out/module.taps.x_mu#3",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "rel_err": 0.020507105587550107,
+            "tensor": "out/module.taps.x_mu#4",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "rel_err": 0.018294665779558798,
+            "tensor": "out/module.taps.x_mu#5",
+            "where": "rubber_duck__triple-flow r0 s1"
+          }
+        ]
+      },
+      "strict_ok": true,
+      "full_training_acceptance": false
+    },
+    {
+      "stage": "flow-only",
+      "variant": "flow-only",
+      "status": "MODULE_DIAGNOSTICS_WITHIN_FROZEN_BASELINE_ENVELOPE",
+      "generic": {
+        "arbitration": [],
+        "bitwise_identical": 1360,
+        "bitwise_trusted": true,
+        "checked": 2435,
+        "closest": [
+          {
+            "gate": 0.00014333569938385104,
+            "ratio": 0.5396674549449474,
+            "rel_err": 7.735361208923695e-05,
+            "tensor": "delta/adam#1/module.velocity_net.planes",
+            "where": "motion_kuro__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.008774242223198473,
+            "ratio": 0.5100331219414556,
+            "rel_err": 0.004475154153768455,
+            "tensor": "out/module.taps.weight_per_gs_pixel#4",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.008774242223198473,
+            "ratio": 0.5073105945306184,
+            "rel_err": 0.0044512660388064725,
+            "tensor": "out/module.taps.weight_per_gs_pixel#3",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 1.3270261624852924e-05,
+            "ratio": 0.4992247328802519,
+            "rel_err": 6.6248428149182584e-06,
+            "tensor": "out/module.taps.proj_means_2D#1",
+            "where": "motion_kuro__raster-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "ratio": 0.49640381208306855,
+            "rel_err": 2.3772548683865865e-06,
+            "tensor": "out/module.taps.conic_2D_inv#4",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "ratio": 0.49636568450952173,
+            "rel_err": 2.3770722772024987e-06,
+            "tensor": "out/module.taps.conic_2D_inv#3",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "ratio": 0.4962825225510102,
+            "rel_err": 2.376674018434286e-06,
+            "tensor": "out/module.taps.conic_2D_inv#5",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "ratio": 0.48991323697963524,
+            "rel_err": 0.006420072156229132,
+            "tensor": "out/module.taps.x_mu#3",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.013104508455026705,
+            "ratio": 0.48651283177617893,
+            "rel_err": 0.006375511517489922,
+            "tensor": "out/module.taps.x_mu#4",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 1.3270261624852924e-05,
+            "ratio": 0.47972633213823196,
+            "rel_err": 6.366093935805428e-06,
+            "tensor": "out/module.taps.proj_means_2D#5",
+            "where": "motion_kuro__triple-flow r0 s1"
+          }
+        ],
+        "dtype_changes": [],
+        "errors": [],
+        "exact_failures": [],
+        "excluded": {},
+        "measured_tier": "N1",
+        "precision_mode_changes": [],
+        "status": "PASS",
+        "thresholds_sha256": "797657263952814cb1bc94366fd675aac209460b1860a1e03114650bbaab0956",
+        "traced_only_cases": [],
+        "unresolved": [],
+        "violations": []
+      },
+      "strict_ok": true,
+      "full_training_acceptance": false
+    },
+    {
+      "stage": "both",
+      "variant": "both",
+      "status": "MODULE_DIAGNOSTICS_REJECTED_OR_UNRESOLVED",
+      "generic": {
+        "arbitration": [],
+        "bitwise_identical": 1367,
+        "bitwise_trusted": true,
+        "checked": 2435,
+        "closest": [
+          {
+            "gate": 1.8826390900716204e-05,
+            "ratio": 4.175093647006626,
+            "rel_err": 7.860194504564359e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "ratio": 4.042540373564199,
+            "rel_err": 7.610644530464692e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "ratio": 3.970121484196077,
+            "rel_err": 7.474305898480693e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "ratio": 3.895338864975668,
+            "rel_err": 3.895338864975668e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "ratio": 3.889946474778181,
+            "rel_err": 3.889946474778181e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "ratio": 3.760777394855611,
+            "rel_err": 4.68482893012325e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "ratio": 3.7528835402214846,
+            "rel_err": 3.752883540221485e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "ratio": 3.752351779882695,
+            "rel_err": 4.683619927345266e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "ratio": 3.7481624934939197,
+            "rel_err": 3.74816249349392e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "ratio": 3.7415877434377722,
+            "rel_err": 4.660924235778872e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "motion_kuro__raster-regular r0 s0"
+          }
+        ],
+        "dtype_changes": [],
+        "errors": [],
+        "exact_failures": [],
+        "excluded": {},
+        "measured_tier": "N1",
+        "precision_mode_changes": [],
+        "status": "INCORRECT",
+        "thresholds_sha256": "797657263952814cb1bc94366fd675aac209460b1860a1e03114650bbaab0956",
+        "traced_only_cases": [],
+        "unresolved": [
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.1562637643242895e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.0435206867676496e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.1530695939146828e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.060825286519879e-05,
+            "rel_err": 6.78552094825976e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 2.552315395990341e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.2442767495272803e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.0217400800579812e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.7382432609328158e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.2424837460864793e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.060825286519879e-05,
+            "rel_err": 7.106989257070465e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 2.583581017463397e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.0231456753278517e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.0960656879496498e-05,
+            "tensor": "grad/probe/deformation0",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.5095341163331705e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.0209523078965043e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.060825286519879e-05,
+            "rel_err": 5.902730368696888e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 2.6503953430378468e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.5911683599266322e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.3039245951208622e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.893921796262822e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9217144208082913e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.58905447705143e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 4.533815037335405e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.304420283334508e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.060825286519879e-05,
+            "rel_err": 6.026042483809464e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.8919417371144417e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 5.829902534883498e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.5106674546812271e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.335964237633999e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9109737720193906e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.955258969757557e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.5129336782090082e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 4.288387540081885e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.3367048423281124e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.060825286519879e-05,
+            "rel_err": 6.087783967812308e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9129200719149475e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 5.910586843929047e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.5749179087216263e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 1.4667094066981772e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.8737101767666648e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.904650362363351e-05,
+            "tensor": "grad/probe/deformation0",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9172805007007945e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.5772658646385795e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 4.49277973795926e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 1.4669912040832573e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.060825286519879e-05,
+            "rel_err": 4.3374049666203105e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.873552867472813e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 5.787294382665657e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 3.672420364201923e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 4.68482893012325e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9408937655076417e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 2.1069239204498065e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 3.667248497346553e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 7.474305898480693e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 4.683619927345266e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.060825286519879e-05,
+            "rel_err": 0.00011410855206600696,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.940421628018764e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 4.150187379767752e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 3.752883540221485e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 4.660924235778872e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9575100503099117e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 2.1228153585361762e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 3.74816249349392e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 7.610644530464692e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 4.659973735132902e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.060825286519879e-05,
+            "rel_err": 0.00011218184830087513,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.956431455100071e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 4.206136147679518e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 3.895338864975668e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 1.8659519808928437e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9238144902097592e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.999706395217098e-05,
+            "tensor": "grad/probe/deformation0",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 2.0988677810662564e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 3.889946474778181e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 7.860194504564359e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 1.865327260925634e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9217535690253165e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 4.142354479223277e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.1091338859753363e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "rubber_duck__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 1.736380541694121e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "rubber_duck__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.1015562676950387e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "rubber_duck__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 1.73292286897678e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "rubber_duck__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.1505420577382923e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "rubber_duck__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 1.7555094736265738e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "rubber_duck__triple-flow r0 s0"
+          }
+        ],
+        "violations": [
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.1562637643242895e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.0435206867676496e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.1530695939146828e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "gate": 4.060825286519879e-05,
+            "rel_err": 6.78552094825976e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 2.552315395990341e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.2442767495272803e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.0217400800579812e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.7382432609328158e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.2424837460864793e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "gate": 4.060825286519879e-05,
+            "rel_err": 7.106989257070465e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 2.583581017463397e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.0231456753278517e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.0960656879496498e-05,
+            "tensor": "grad/probe/deformation0",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.5095341163331705e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.0209523078965043e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 4.060825286519879e-05,
+            "rel_err": 5.902730368696888e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 2.6503953430378468e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.5911683599266322e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.3039245951208622e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.893921796262822e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9217144208082913e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.58905447705143e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 4.533815037335405e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.304420283334508e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 4.060825286519879e-05,
+            "rel_err": 6.026042483809464e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.8919417371144417e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 5.829902534883498e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.5106674546812271e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.335964237633999e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9109737720193906e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.955258969757557e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.5129336782090082e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 4.288387540081885e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.3367048423281124e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 4.060825286519879e-05,
+            "rel_err": 6.087783967812308e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9129200719149475e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 5.910586843929047e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.5749179087216263e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 1.4667094066981772e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.8737101767666648e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.904650362363351e-05,
+            "tensor": "grad/probe/deformation0",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9172805007007945e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.5772658646385795e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 4.49277973795926e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 1.4669912040832573e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 4.060825286519879e-05,
+            "rel_err": 4.3374049666203105e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.873552867472813e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 5.787294382665657e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 3.672420364201923e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 4.68482893012325e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9408937655076417e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 2.1069239204498065e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 3.667248497346553e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 7.474305898480693e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 4.683619927345266e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 4.060825286519879e-05,
+            "rel_err": 0.00011410855206600696,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.940421628018764e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 4.150187379767752e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 3.752883540221485e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 4.660924235778872e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9575100503099117e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 2.1228153585361762e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 3.74816249349392e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 7.610644530464692e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 4.659973735132902e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 4.060825286519879e-05,
+            "rel_err": 0.00011218184830087513,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.956431455100071e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 4.206136147679518e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 3.895338864975668e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 1.8659519808928437e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9238144902097592e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.999706395217098e-05,
+            "tensor": "grad/probe/deformation0",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 2.0988677810662564e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 3.889946474778181e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 7.860194504564359e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 1.865327260925634e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9217535690253165e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 4.142354479223277e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.1091338859753363e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "rubber_duck__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 1.736380541694121e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "rubber_duck__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.1015562676950387e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "rubber_duck__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 1.73292286897678e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "rubber_duck__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.1505420577382923e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "rubber_duck__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 1.7555094736265738e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "rubber_duck__triple-flow r0 s0"
+          }
+        ]
+      },
+      "strict_ok": true,
+      "full_training_acceptance": false
+    },
+    {
+      "stage": "raster-only",
+      "variant": "raster-only",
+      "status": "MODULE_DIAGNOSTICS_REJECTED_OR_UNRESOLVED",
+      "generic": {
+        "arbitration": [],
+        "bitwise_identical": 1372,
+        "bitwise_trusted": true,
+        "checked": 2435,
+        "closest": [
+          {
+            "gate": 1.8826390900716204e-05,
+            "ratio": 4.177516810257402,
+            "rel_err": 7.864756446421894e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "ratio": 4.04270547596895,
+            "rel_err": 7.610955358705742e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "ratio": 3.970206878346343,
+            "rel_err": 7.474466664846048e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "ratio": 3.8952857086588883,
+            "rel_err": 3.8952857086588885e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "ratio": 3.8897886488587807,
+            "rel_err": 3.889788648858781e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "ratio": 3.7614061644731343,
+            "rel_err": 4.6856121932056615e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "ratio": 3.7551086877143307,
+            "rel_err": 3.755108687714331e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "ratio": 3.7534919893845533,
+            "rel_err": 4.685043116922769e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "ratio": 3.749309878347183,
+            "rel_err": 3.7493098783471835e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "ratio": 3.740846195456525,
+            "rel_err": 4.6600004838332305e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "motion_kuro__raster-regular r0 s0"
+          }
+        ],
+        "dtype_changes": [],
+        "errors": [],
+        "exact_failures": [],
+        "excluded": {},
+        "measured_tier": "N1",
+        "precision_mode_changes": [],
+        "status": "INCORRECT",
+        "thresholds_sha256": "797657263952814cb1bc94366fd675aac209460b1860a1e03114650bbaab0956",
+        "traced_only_cases": [],
+        "unresolved": [
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.1713907631736923e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 1.9891936804791184e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.1686908166006205e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.060825286519879e-05,
+            "rel_err": 6.846311094513609e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 2.555637418267109e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.234507570132684e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.020576661799244e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.6983086190569197e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.233257843390547e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.060825286519879e-05,
+            "rel_err": 7.080685249350608e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 2.5752409672928787e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.0166865811446436e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.09640176766228e-05,
+            "tensor": "grad/probe/deformation0",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.4943276489473164e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.0143368969382726e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.060825286519879e-05,
+            "rel_err": 5.890589163915965e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 2.653985853196665e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.5909698314648338e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.305062956157967e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.8889283225761937e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.917135511417004e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.5887670309747923e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 4.5334835530229825e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.3048800756382887e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.060825286519879e-05,
+            "rel_err": 6.027064671975538e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.8887579020627734e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 5.814253401460982e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.5101831573989315e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.3374004111011987e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9106606328629682e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.955107833500633e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.5124847707372588e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 4.2872607996478554e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.3384639605112372e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.060825286519879e-05,
+            "rel_err": 6.087984005613315e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.912194423172135e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 5.9110773982408114e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.5688786239899388e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 1.4628923221809719e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.873716285008786e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9088584841668032e-05,
+            "tensor": "grad/probe/deformation0",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9221462380485494e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.5696157729660154e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 4.473373946266795e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 1.4627781775093291e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.060825286519879e-05,
+            "rel_err": 4.3247138828431174e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.8736923406359313e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 5.787340485650112e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 3.673647079873782e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 4.6856121932056615e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9417704820844694e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 2.10731393071161e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 3.668505622494997e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 7.474466664846048e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 4.685043116922769e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.060825286519879e-05,
+            "rel_err": 0.00011416333113056586,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9417640080035487e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 4.152667748074137e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 3.755108687714331e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 4.6600004838332305e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9582440508704366e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 2.1236830985107932e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 3.7493098783471835e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 7.610955358705742e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 4.658778109543331e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 4.060825286519879e-05,
+            "rel_err": 0.00011216913546760669,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9568278846417835e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 4.20982130924452e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 3.8952857086588885e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 1.8657749133967886e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9231011261176046e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.99894640660739e-05,
+            "tensor": "grad/probe/deformation0",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 2.0984440574753676e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 3.889788648858781e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 7.864756446421894e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 1.8650794188679843e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1e-05,
+            "rel_err": 1.9210675702545424e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 4.140952394107153e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.1103485989333396e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "rubber_duck__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 1.743556795946235e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "rubber_duck__raster-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.093769188807856e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "rubber_duck__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 1.7425053826453606e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "rubber_duck__raster-regular r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.1558275727706457e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "rubber_duck__triple-flow r0 s0"
+          },
+          {
+            "arbitration": "no fp64 reference",
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 1.7653882108654552e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "rubber_duck__triple-flow r0 s0"
+          }
+        ],
+        "violations": [
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.1713907631736923e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 1.9891936804791184e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.1686908166006205e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "gate": 4.060825286519879e-05,
+            "rel_err": 6.846311094513609e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 2.555637418267109e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "balls_reaction__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.234507570132684e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.020576661799244e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.6983086190569197e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.233257843390547e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "gate": 4.060825286519879e-05,
+            "rel_err": 7.080685249350608e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 2.5752409672928787e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "balls_reaction__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.0166865811446436e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.09640176766228e-05,
+            "tensor": "grad/probe/deformation0",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.4943276489473164e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.0143368969382726e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 4.060825286519879e-05,
+            "rel_err": 5.890589163915965e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 2.653985853196665e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "balls_reaction__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.5909698314648338e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.305062956157967e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.8889283225761937e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.917135511417004e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.5887670309747923e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 4.5334835530229825e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.3048800756382887e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 4.060825286519879e-05,
+            "rel_err": 6.027064671975538e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.8887579020627734e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 5.814253401460982e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "dry_ice__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.5101831573989315e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 2.3374004111011987e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9106606328629682e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.955107833500633e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.5124847707372588e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 4.2872607996478554e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 2.3384639605112372e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 4.060825286519879e-05,
+            "rel_err": 6.087984005613315e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.912194423172135e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 5.9110773982408114e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "dry_ice__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.5688786239899388e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 1.4628923221809719e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.873716285008786e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9088584841668032e-05,
+            "tensor": "grad/probe/deformation0",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9221462380485494e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.5696157729660154e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 4.473373946266795e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 1.4627781775093291e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 4.060825286519879e-05,
+            "rel_err": 4.3247138828431174e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.8736923406359313e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 5.787340485650112e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "dry_ice__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 3.673647079873782e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 4.6856121932056615e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9417704820844694e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 2.10731393071161e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 3.668505622494997e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 7.474466664846048e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 4.685043116922769e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 4.060825286519879e-05,
+            "rel_err": 0.00011416333113056586,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9417640080035487e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 4.152667748074137e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "motion_kuro__raster-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 3.755108687714331e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 4.6600004838332305e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9582440508704366e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 2.1236830985107932e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 3.7493098783471835e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 7.610955358705742e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 4.658778109543331e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 4.060825286519879e-05,
+            "rel_err": 0.00011216913546760669,
+            "tensor": "optim/adam/module._scaling/exp_avg_sq",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9568278846417835e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 4.20982130924452e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "motion_kuro__raster-regular r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 3.8952857086588885e-05,
+            "tensor": "grad/adam#0/module._opacity",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.2457075860250742e-05,
+            "rel_err": 1.8657749133967886e-05,
+            "tensor": "grad/adam#0/module._scaling",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9231011261176046e-05,
+            "tensor": "grad/adam#0/module._xyz",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.99894640660739e-05,
+            "tensor": "grad/probe/deformation0",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 2.0984440574753676e-05,
+            "tensor": "grad/probe/render0/viewspace_points",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 3.889788648858781e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 7.864756446421894e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.2481825271434664e-05,
+            "rel_err": 1.8650794188679843e-05,
+            "tensor": "optim/adam/module._scaling/exp_avg",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1e-05,
+            "rel_err": 1.9210675702545424e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 4.140952394107153e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "motion_kuro__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.1103485989333396e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "rubber_duck__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 1.743556795946235e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "rubber_duck__raster-flow r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.093769188807856e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "rubber_duck__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 1.7425053826453606e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "rubber_duck__raster-regular r0 s0"
+          },
+          {
+            "gate": 1.8826390900716204e-05,
+            "rel_err": 2.1558275727706457e-05,
+            "tensor": "optim/adam/module._opacity/exp_avg_sq",
+            "where": "rubber_duck__triple-flow r0 s0"
+          },
+          {
+            "gate": 1.5844951376674706e-05,
+            "rel_err": 1.7653882108654552e-05,
+            "tensor": "optim/adam/module._xyz/exp_avg_sq",
+            "where": "rubber_duck__triple-flow r0 s0"
+          }
+        ]
+      },
+      "strict_ok": true,
+      "full_training_acceptance": false
+    },
+    {
+      "stage": "both",
+      "variant": "both",
+      "status": "MODULE_DIAGNOSTICS_WITHIN_FROZEN_BASELINE_ENVELOPE",
+      "generic": {
+        "arbitration": [],
+        "bitwise_identical": 1368,
+        "bitwise_trusted": true,
+        "checked": 2435,
+        "closest": [
+          {
+            "gate": 0.00015319540925536128,
+            "ratio": 0.5635439360929557,
+            "rel_err": 8.633234392313751e-05,
+            "tensor": "optim/adam/module.velocity_net.time_proj.bias/exp_avg_sq",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.0001134142671085422,
+            "ratio": 0.56318407960199,
+            "rel_err": 6.387310963525858e-05,
+            "tensor": "optim/adam/module.velocity_net.time_proj.bias/exp_avg",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.00011341425430974166,
+            "ratio": 0.5621890547263682,
+            "rel_err": 6.37602524228896e-05,
+            "tensor": "optim/adam/module.velocity_net.time_proj.weight/exp_avg",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 0.00015352913415575997,
+            "ratio": 0.5615942028985507,
+            "rel_err": 8.622107171790867e-05,
+            "tensor": "optim/adam/module.velocity_net.time_proj.weight/exp_avg_sq",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 2.3416246234386028e-06,
+            "ratio": 0.5505375056609338,
+            "rel_err": 1.289152179382112e-06,
+            "tensor": "out/module.taps.conic_2D#3",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 2.3416246234386028e-06,
+            "ratio": 0.5471828371443985,
+            "rel_err": 1.2812968049803186e-06,
+            "tensor": "out/module.taps.conic_2D#5",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 2.3416246234386028e-06,
+            "ratio": 0.5454662814816946,
+            "rel_err": 1.2772772759730281e-06,
+            "tensor": "out/module.taps.conic_2D#4",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.62775354309559e-05,
+            "ratio": 0.5439055013610735,
+            "rel_err": 2.517060611032891e-05,
+            "tensor": "delta/adam#1/module.velocity_net.shared_net.0.bias",
+            "where": "rubber_duck__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "ratio": 0.5432637795394488,
+            "rel_err": 2.6016650825238532e-06,
+            "tensor": "out/module.taps.conic_2D_inv#3",
+            "where": "dry_ice__triple-flow r0 s1"
+          },
+          {
+            "gate": 4.788953691573938e-06,
+            "ratio": 0.5428371591417084,
+            "rel_err": 2.5996220171951934e-06,
+            "tensor": "out/module.taps.conic_2D_inv#4",
+            "where": "dry_ice__triple-flow r0 s1"
+          }
+        ],
+        "dtype_changes": [],
+        "errors": [],
+        "exact_failures": [],
+        "excluded": {},
+        "measured_tier": "N1",
+        "precision_mode_changes": [],
+        "status": "PASS",
+        "thresholds_sha256": "797657263952814cb1bc94366fd675aac209460b1860a1e03114650bbaab0956",
+        "traced_only_cases": [],
+        "unresolved": [],
+        "violations": []
+      },
+      "strict_ok": true,
+      "full_training_acceptance": false
+    }
+  ],
+  "source_commits": {
+    "PIDG": "b77fd2107a50c875d7219bb4f82388d5e5ea1319",
+    "raster": "2146a1c0dc3558644af420f20c21a0ad07ffa67a",
+    "ResearchBoost": "ab7b569789317bf872c041a1d596454d58dcfdeb"
+  },
+  "formal_ResearchBoost_acceptance": false
+}
