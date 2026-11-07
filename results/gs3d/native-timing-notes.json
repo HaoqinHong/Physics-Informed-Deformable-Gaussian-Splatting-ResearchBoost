@@ -1,0 +1,40 @@
+{
+  "schema": "native-timing-notes@1",
+  "raw_summary": "summary.json",
+  "policy": "../../benchmarks/gs3d/task/native_performance_policy.json",
+  "native_workload_seconds_formula": "native_complete.postcheck_cpu_process.process.started_unix - full_train.process.started_unix",
+  "eligibility": "Both paired full_train.json report complete with returncode zero; both native_complete.json include successful fresh CPU postcheck with empty CUDA_VISIBLE_DEVICES; exact frozen source/data/config/seed/schedule bindings.",
+  "declared_before_any_optimization": true,
+  "baseline_seed0_exclusions": {
+    "bonsai": "Legacy postcheck; missing comparable fresh-CPU start boundary. Native workload seconds are unavailable.",
+    "bicycle": "Original post-training artifact check exited SIGBUS (-7); separate strict recovery establishes quality eligibility only, preserving the failed original exit.",
+    "garden": "Original post-training artifact check exited SIGBUS (-7); separate strict recovery establishes quality eligibility only, preserving the failed original exit."
+  },
+  "complete_pipeline_pair_order": "Baselines collected before optimization; experimental full-training runs followed. No baseline-candidate-baseline repeat for native complete-pipeline timing.",
+  "eligible_pairs_per_scene": 1,
+  "native_run_to_run_noise_estimate": null,
+  "native_confidence_interval": null,
+  "noise_note": "Not estimated: only one eligible baseline/candidate pair per scene on the shared GPU. The separate fixed-N B-C-B probe noise is not a full-pipeline noise estimate.",
+  "gaussian_count_confound": "The FP32 accumulation change affects training trajectories and densification. Native wall-time ratios include the resulting Gaussian-count and work differences; they do not isolate equal-work kernel speedup.",
+  "seed1_gaussian_counts": [
+    {
+      "scene": "bonsai",
+      "baseline_gaussians_30000": 1275632,
+      "experimental_gaussians_30000": 1271323,
+      "change_percent": -0.3377933447890946
+    },
+    {
+      "scene": "bicycle",
+      "baseline_gaussians_30000": 6071245,
+      "experimental_gaussians_30000": 5971655,
+      "change_percent": -1.640355478983302
+    },
+    {
+      "scene": "garden",
+      "baseline_gaussians_30000": 5927094,
+      "experimental_gaussians_30000": 5951459,
+      "change_percent": 0.41107834631946005
+    }
+  ],
+  "formal_ResearchBoost_acceptance": false
+}

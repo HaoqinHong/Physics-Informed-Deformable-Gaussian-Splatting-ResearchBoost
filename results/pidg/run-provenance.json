@@ -1,0 +1,117 @@
+{
+  "schema": "pidg-run-provenance@1",
+  "raw_summary": "summary.json",
+  "raw_checks_preserved": true,
+  "runs": [
+    {
+      "check_index": 0,
+      "run_id": "R01",
+      "artifact": "optimizer-runs/r01-flow-check/flow-only/check.json",
+      "variant_label": "flow-only",
+      "effective_configuration": "dense embedding gather backward; original raster algorithm",
+      "generic_status": "INCORRECT",
+      "checked": 2435,
+      "bitwise_identical": 1168,
+      "continuous_violations": 82,
+      "strict_ok": true,
+      "thresholds_file_sha256": "ea0ad940fe4795b23b2cb6f3277f1747304025b581b5eb2d42a51cd5cc8d8232",
+      "generic_thresholds_sha256": "797657263952814cb1bc94366fd675aac209460b1860a1e03114650bbaab0956"
+    },
+    {
+      "check_index": 1,
+      "run_id": "R03",
+      "artifact": "optimizer-runs/r03-flow-check/flow-only/check.json",
+      "variant_label": "flow-only",
+      "effective_configuration": "exact-zero-eliding gather backward; original raster algorithm",
+      "generic_status": "PASS",
+      "checked": 2435,
+      "bitwise_identical": 1360,
+      "continuous_violations": 0,
+      "strict_ok": true,
+      "thresholds_file_sha256": "ea0ad940fe4795b23b2cb6f3277f1747304025b581b5eb2d42a51cd5cc8d8232",
+      "generic_thresholds_sha256": "797657263952814cb1bc94366fd675aac209460b1860a1e03114650bbaab0956"
+    },
+    {
+      "check_index": 2,
+      "run_id": "R04 combined",
+      "artifact": "optimizer-runs/r04-both-check/both/check.json",
+      "variant_label": "both",
+      "effective_configuration": "R03 gather plus pointer-grouped raster gradient reduction",
+      "generic_status": "INCORRECT",
+      "checked": 2435,
+      "bitwise_identical": 1367,
+      "continuous_violations": 84,
+      "strict_ok": true,
+      "thresholds_file_sha256": "ea0ad940fe4795b23b2cb6f3277f1747304025b581b5eb2d42a51cd5cc8d8232",
+      "generic_thresholds_sha256": "797657263952814cb1bc94366fd675aac209460b1860a1e03114650bbaab0956"
+    },
+    {
+      "check_index": 3,
+      "run_id": "R04 raster-only",
+      "artifact": "optimizer-runs/r04-raster-check/raster-only/check.json",
+      "variant_label": "raster-only",
+      "effective_configuration": "original flow plus pointer-grouped raster gradient reduction",
+      "generic_status": "INCORRECT",
+      "checked": 2435,
+      "bitwise_identical": 1372,
+      "continuous_violations": 84,
+      "strict_ok": true,
+      "thresholds_file_sha256": "ea0ad940fe4795b23b2cb6f3277f1747304025b581b5eb2d42a51cd5cc8d8232",
+      "generic_thresholds_sha256": "797657263952814cb1bc94366fd675aac209460b1860a1e03114650bbaab0956"
+    },
+    {
+      "check_index": 4,
+      "run_id": "R06 retained",
+      "artifact": "optimizer-runs/r06-final-both-check/both/check.json",
+      "variant_label": "both",
+      "effective_configuration": "R03 gather plus candidate-local raster rebuilt from original CUDA source",
+      "generic_status": "PASS",
+      "checked": 2435,
+      "bitwise_identical": 1368,
+      "continuous_violations": 0,
+      "strict_ok": true,
+      "thresholds_file_sha256": "ea0ad940fe4795b23b2cb6f3277f1747304025b581b5eb2d42a51cd5cc8d8232",
+      "generic_thresholds_sha256": "797657263952814cb1bc94366fd675aac209460b1860a1e03114650bbaab0956"
+    }
+  ],
+  "selection_semantics": "bench/common.py selections(): both selects flow_file and raster_root from the candidate tree; it does not certify that either selected component is accelerated.",
+  "r01_flow_sha256": "7eb6e1f38c7c612396c6cc8246c89c3c0dcc5c87de5717282dcb03b6013c8dda",
+  "r05_rejected_source_manifest": {
+    "utils/flow_utils.py": "3566f99af458574e465354834814671e38e00ce95212cca6782acdca8c26a37b",
+    "submodules/flow-based-diff-gaussian-rasterization/cuda_rasterizer/backward.cu": "9edf9e28ff268f3f132ec7371e76c1c25bbca1b2f5640d8dc8fcea2227273f1a",
+    "submodules/flow-based-diff-gaussian-rasterization/setup.py": "3bb28d5a6417d9521444c167259da8fa3bfeae94dada9d0c9f3d8715a0eeedf5",
+    "submodules/flow-based-diff-gaussian-rasterization/diff_gaussian_rasterization/_C.cpython-312-x86_64-linux-gnu.so": "57b7f254e8001fd68c740c772a0853d990285078a725cdfa42b07e1bc16e36ad"
+  },
+  "r06_retained_source_manifest": {
+    "utils/flow_utils.py": "3566f99af458574e465354834814671e38e00ce95212cca6782acdca8c26a37b",
+    "submodules/flow-based-diff-gaussian-rasterization/cuda_rasterizer/backward.cu": "ea9d57d653e3938f9723112e592909c8e022df6d7a86eedfabde3185a481ac6b",
+    "submodules/flow-based-diff-gaussian-rasterization/setup.py": "3bb28d5a6417d9521444c167259da8fa3bfeae94dada9d0c9f3d8715a0eeedf5",
+    "submodules/flow-based-diff-gaussian-rasterization/diff_gaussian_rasterization/_C.cpython-312-x86_64-linux-gnu.so": "08247b563cc885647cc164ad726bc81eb885f6058e723a529030064143fe3b48"
+  },
+  "r06_raster_source_matches_baseline": true,
+  "baseline_raster_backward_sha256": "ea9d57d653e3938f9723112e592909c8e022df6d7a86eedfabde3185a481ac6b",
+  "changes_between_runs": [
+    "R01 dense embedding gather was rejected (82 continuous violations). R03 replaced that implementation with exact-zero-eliding gather backward (PASS).",
+    "R02 timings were configuration-invalid because the intended CUDA architecture flags were omitted. The GLM include-path build fix was applied before subsequent valid measurements.",
+    "R04 added pointer-grouped FP32 raster gradient reduction; both and raster-only checks each had 84 violations.",
+    "For R06 the rejected raster CUDA source was reverted byte-for-byte to baseline and the candidate-local extension rebuilt. The retained flow source was unchanged from R03. The historical label both was retained because both module paths came from the candidate tree."
+  ],
+  "confirmation": {
+    "artifact": "optimizer-runs/r06-final-confirm/both/dry_ice/triple-flow/forward-backward/comparison.json",
+    "recorded_variant": "both",
+    "paired_numerical_check_index": 4,
+    "effective_configuration": "R03 gather plus candidate-local raster rebuilt from original CUDA source",
+    "observed_speedup": 4.174906896404625,
+    "baseline_ms": 9369.788226981958,
+    "candidate_ms": 2244.3107018868127,
+    "formal_benefit_verdict": "UNAVAILABLE_SHARED_WORKLOAD"
+  },
+  "frozen_hashes": {
+    "formulation.json": "1d7d4f7668dedb7906cd52b95335011f0959178cb0c5ed3c9aebd1bfcfe7b5b2",
+    "thresholds.json": "ea0ad940fe4795b23b2cb6f3277f1747304025b581b5eb2d42a51cd5cc8d8232",
+    "certification.json": "cfe03b3641c071ab8f4ffa983abefd1ab8db8381469082a014f6f648390f27c9",
+    "judge-change-audit.json": "b2e9982919faac3cfed3e8d43bc637696030573892a8450ca2faa47e67a7373e"
+  },
+  "formal_ResearchBoost_acceptance": false,
+  "provenance_scope": "Reconciled from locally archived original check records, final optimizer receipt, source manifests and the publication-validated baseline source; no new GPU measurements or changed thresholds."
+}
